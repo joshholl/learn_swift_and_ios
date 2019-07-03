@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		FD62BE8222CC3D430060399C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD62BE8122CC3D430060399C /* AppDelegate.swift */; };
-		FD62BE8422CC3D430060399C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD62BE8322CC3D430060399C /* ViewController.swift */; };
+		FD62BE8422CC3D430060399C /* AndroidHatersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD62BE8322CC3D430060399C /* AndroidHatersViewController.swift */; };
 		FD62BE8722CC3D430060399C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD62BE8522CC3D430060399C /* Main.storyboard */; };
 		FD62BE8922CC3D450060399C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD62BE8822CC3D450060399C /* Assets.xcassets */; };
 		FD62BE8C22CC3D450060399C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD62BE8A22CC3D450060399C /* LaunchScreen.storyboard */; };
+		FD62BE9622CC50AF0060399C /* AndroidHatersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD62BE9522CC50AF0060399C /* AndroidHatersModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FD62BE7E22CC3D430060399C /* UIDelegationProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIDelegationProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD62BE8122CC3D430060399C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FD62BE8322CC3D430060399C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FD62BE8322CC3D430060399C /* AndroidHatersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AndroidHatersViewController.swift; sourceTree = "<group>"; };
 		FD62BE8622CC3D430060399C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FD62BE8822CC3D450060399C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD62BE8B22CC3D450060399C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD62BE8D22CC3D450060399C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD62BE9522CC50AF0060399C /* AndroidHatersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AndroidHatersModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,23 @@
 		FD62BE8022CC3D430060399C /* UIDelegationProject */ = {
 			isa = PBXGroup;
 			children = (
-				FD62BE8122CC3D430060399C /* AppDelegate.swift */,
-				FD62BE8322CC3D430060399C /* ViewController.swift */,
-				FD62BE8522CC3D430060399C /* Main.storyboard */,
-				FD62BE8822CC3D450060399C /* Assets.xcassets */,
-				FD62BE8A22CC3D450060399C /* LaunchScreen.storyboard */,
-				FD62BE8D22CC3D450060399C /* Info.plist */,
+				FD62BE9422CC50720060399C /* Plumbing */,
+				FD62BE8322CC3D430060399C /* AndroidHatersViewController.swift */,
+				FD62BE9522CC50AF0060399C /* AndroidHatersModel.swift */,
 			);
 			path = UIDelegationProject;
+			sourceTree = "<group>";
+		};
+		FD62BE9422CC50720060399C /* Plumbing */ = {
+			isa = PBXGroup;
+			children = (
+				FD62BE8822CC3D450060399C /* Assets.xcassets */,
+				FD62BE8D22CC3D450060399C /* Info.plist */,
+				FD62BE8522CC3D430060399C /* Main.storyboard */,
+				FD62BE8122CC3D430060399C /* AppDelegate.swift */,
+				FD62BE8A22CC3D450060399C /* LaunchScreen.storyboard */,
+			);
+			name = Plumbing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +146,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD62BE8422CC3D430060399C /* ViewController.swift in Sources */,
+				FD62BE8422CC3D430060399C /* AndroidHatersViewController.swift in Sources */,
+				FD62BE9622CC50AF0060399C /* AndroidHatersModel.swift in Sources */,
 				FD62BE8222CC3D430060399C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
