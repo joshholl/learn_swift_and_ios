@@ -5,7 +5,7 @@ protocol WorkoutCreationModelDelegate: class {
 }
 
 final class WorkoutCreationModel {
-    let minimumStepperValue: Double = 0.0
+    let minimumStepperValue: Double = 2.0
     let maximumStepperValue: Double = 90.0
     
     private(set) var workout: Workout
