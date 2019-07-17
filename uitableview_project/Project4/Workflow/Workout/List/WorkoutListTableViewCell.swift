@@ -14,6 +14,5 @@ final class WorkoutListTableViewCell: UITableViewCell {
         nameLabel.text = workout.name
         dateLabel.text = workout.date.toString(format: .yearMonthDay)
         durationLabel.text = "\(workout.duration) minutes"
-        highIntensityLabel.text = workout.isHighIntensity ? "💥💥💥" : ""
     }
 }

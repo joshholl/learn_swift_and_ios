@@ -5,7 +5,8 @@ final class WorkoutCreationViewController: UIViewController {
     @IBOutlet private weak var dateField: UITextField!
     @IBOutlet private weak var minutesLabel: UILabel!
     @IBOutlet private weak var minutesStepper: UIStepper!
-    @IBOutlet private weak var highIntensitySwitch: UISwitch!
+    @IBOutlet private weak var caloriesBurnedLabel: UILabel!
+    @IBOutlet private weak var caloriesBurnedStepper: UIStepper!
     @IBOutlet private weak var addWorkoutButton: UIButton!
     
     private var datePicker: UIDatePicker!
@@ -31,13 +32,17 @@ extension WorkoutCreationViewController {
         nameField.text = model.workout.name
         
         // Configure minutes stepper and label
-        minutesStepper.minimumValue = model.minimumStepperValue
-        minutesStepper.maximumValue = model.maximumStepperValue
+        minutesStepper.minimumValue = model.minimumDurationStepperValue
+        minutesStepper.maximumValue = model.maximumDurationStepperValue
         minutesStepper.value = Double(model.workout.duration)
         minutesLabel.text = "\(model.workout.duration)"
-        
-        // Turn off switch by default
-        highIntensitySwitch.isOn = model.workout.isHighIntensity
+
+        //Configure calories per minute stepper and label
+        caloriesBurnedStepper.maximumValue = model.maximumCaloriesBurnedStepperValue
+        caloriesBurnedStepper.minimumValue = model.minimumCaloriesBurnedStepperValue
+        caloriesBurnedStepper.value = Double(model.workout.caloriesBurnedPerMinute)
+        caloriesBurnedLabel.text = String(format: "%.1f", model.workout.caloriesBurnedPerMinute)
+
     }
 }
 
@@ -52,12 +57,16 @@ extension WorkoutCreationViewController {
         minutesLabel.text = "\(Int(sender.value))"
     }
     
+    @IBAction private func caloriesPerMinuiteValueChanged(_ sender: UIStepper) {
+        caloriesBurnedLabel.text = String(format: "%.1f", sender.value)
+    }
+    
     @IBAction private func addWorkoutButtonTapped(_ sender: UIButton) {
         model.saveWorkout(
             name: nameField.text ?? "",
             date: datePicker.date,
             duration: Int(minutesStepper.value),
-            isHighIntensity: highIntensitySwitch.isOn
+            caloriesBurnedPerMinute: caloriesBurnedStepper.value
         )
         navigationController?.popViewController(animated: true)
     }

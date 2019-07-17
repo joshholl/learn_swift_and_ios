@@ -5,8 +5,11 @@ protocol WorkoutCreationModelDelegate: class {
 }
 
 final class WorkoutCreationModel {
-    let minimumStepperValue: Double = 2.0
-    let maximumStepperValue: Double = 90.0
+    let minimumDurationStepperValue: Double = 2.0
+    let maximumDurationStepperValue: Double = 90.0
+    
+    let minimumCaloriesBurnedStepperValue: Double = 1.0
+    let maximumCaloriesBurnedStepperValue: Double = 20.0
     
     private(set) var workout: Workout
     
@@ -19,14 +22,14 @@ final class WorkoutCreationModel {
 }
 
 extension WorkoutCreationModel {
-    func saveWorkout(name: String, date: Date, duration: Int, isHighIntensity: Bool) {
+    func saveWorkout(name: String, date: Date, duration: Int, caloriesBurnedPerMinute: Double) {
         delegate?.save(workout:
             Workout(
                 id: workout.id,
                 name: name.isEmpty ? workout.name : name,
                 date: date,
                 duration: duration,
-                isHighIntensity: isHighIntensity
+                caloriesBurnedPerMinute: caloriesBurnedPerMinute
             )
         )
     }

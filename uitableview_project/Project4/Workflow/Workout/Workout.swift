@@ -5,11 +5,11 @@ struct Workout: Codable {
     let name: String
     let date: Date
     let duration: Int
-    let isHighIntensity: Bool
+    let caloriesBurnedPerMinute:Double
 }
 
 extension Workout {
     static var defaultWorkout: Workout {
-        return Workout(id: UUID(), name: "No Name", date: Date(), duration: 10, isHighIntensity: false)
+        return Workout(id: UUID(), name: "No Name", date: Date(), duration: 10, caloriesBurnedPerMinute: 1)
     }
 }

@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="ELl-kw-cYH" userLabel="Main Stack View">
-                                <rect key="frame" x="20.5" y="171.5" width="373" height="195"/>
+                                <rect key="frame" x="20.5" y="172.5" width="373" height="193"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="A6F-bN-YRO" userLabel="Name Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="373" height="30"/>
@@ -95,24 +95,44 @@
                                             </stepper>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="yZN-Q1-ALd" userLabel="Intensity Stack View">
-                                        <rect key="frame" x="0.0" y="164" width="373" height="31"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="1GM-Bj-dyk" userLabel="Calories Per Minute Stack View">
+                                        <rect key="frame" x="0.0" y="164" width="373" height="29"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High Intensity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vb-oP-8KN">
-                                                <rect key="frame" x="0.0" y="0.0" width="319" height="31"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tf2-Nf-trC">
+                                                <rect key="frame" x="0.0" y="0.0" width="62.5" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XYW-AR-Utd">
-                                                <rect key="frame" x="324" y="0.0" width="51" height="31"/>
-                                            </switch>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2P2-x7-54m" userLabel="Calories Stack View">
+                                                <rect key="frame" x="129.5" y="0.0" width="83" height="29"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPN-rs-E7Q">
+                                                        <rect key="frame" x="0.0" y="0.0" width="10.5" height="29"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wdc-FR-VWh" userLabel="Calories">
+                                                        <rect key="frame" x="20.5" y="0.0" width="62.5" height="29"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" stepValue="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="9Zv-ny-iat">
+                                                <rect key="frame" x="279" y="0.0" width="94" height="29"/>
+                                                <connections>
+                                                    <action selector="caloriesPerMinuiteValueChanged:" destination="itG-V3-sRe" eventType="valueChanged" id="qjr-XR-AtO"/>
+                                                </connections>
+                                            </stepper>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gEh-8i-kvp">
-                                <rect key="frame" x="157" y="416.5" width="100" height="33"/>
+                                <rect key="frame" x="157" y="415.5" width="100" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Add Workout"/>
                                 <connections>
@@ -136,8 +156,9 @@
                     </view>
                     <connections>
                         <outlet property="addWorkoutButton" destination="gEh-8i-kvp" id="4bN-qQ-cAx"/>
+                        <outlet property="caloriesBurnedLabel" destination="qPN-rs-E7Q" id="Krc-GA-HF3"/>
+                        <outlet property="caloriesBurnedStepper" destination="9Zv-ny-iat" id="Moc-Ux-iSn"/>
                         <outlet property="dateField" destination="egj-4V-OI0" id="wpX-5x-tEl"/>
-                        <outlet property="highIntensitySwitch" destination="XYW-AR-Utd" id="g7Z-fL-Qmn"/>
                         <outlet property="minutesLabel" destination="CVr-tt-YgB" id="URe-iM-15z"/>
                         <outlet property="minutesStepper" destination="QKF-nY-vRd" id="rh3-rm-QMb"/>
                         <outlet property="nameField" destination="7xE-Lf-KUV" id="Iug-26-BLA"/>
