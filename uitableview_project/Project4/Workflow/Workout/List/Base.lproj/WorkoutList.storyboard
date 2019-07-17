@@ -58,8 +58,8 @@
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intensity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VwJ-hg-cES">
-                                                                    <rect key="frame" x="78" y="23.5" width="65.5" height="18.5"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VwJ-hg-cES">
+                                                                    <rect key="frame" x="81" y="23.5" width="62.5" height="18.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -77,9 +77,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="caloriesPerMinuteLabel" destination="VwJ-hg-cES" id="xBw-EX-IkK"/>
                                             <outlet property="dateLabel" destination="7Cp-3S-QGy" id="54e-xY-03f"/>
                                             <outlet property="durationLabel" destination="OIk-YR-Tzh" id="4SI-b1-Tfm"/>
-                                            <outlet property="highIntensityLabel" destination="VwJ-hg-cES" id="vRV-j3-LEP"/>
                                             <outlet property="nameLabel" destination="lIt-xm-5Oa" id="31q-sk-gef"/>
                                         </connections>
                                     </tableViewCell>
