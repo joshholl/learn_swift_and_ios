@@ -100,11 +100,18 @@
                         <viewLayoutGuide key="safeArea" id="hpx-M9-rd8"/>
                     </view>
                     <navigationItem key="navigationItem" title="Workout List" id="nlc-Pm-zJG">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Z5F-PG-zuh">
-                            <connections>
-                                <segue destination="LTw-P0-mkB" kind="show" identifier="WorkoutCreation" id="XVI-Df-1Ek"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="Z5F-PG-zuh">
+                                <connections>
+                                    <segue destination="LTw-P0-mkB" kind="show" identifier="WorkoutCreation" id="XVI-Df-1Ek"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Sort" id="r9x-a5-ReG">
+                                <connections>
+                                    <action selector="doSort:" destination="BYZ-38-t0r" id="095-1p-uta"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="T1C-ow-IeH" id="wgc-oK-Udg"/>

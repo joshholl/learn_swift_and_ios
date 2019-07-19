@@ -3,6 +3,7 @@ import UIKit
 final class WorkoutListViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     
+
     private var model: WorkoutListModel!
 }
 
@@ -11,6 +12,11 @@ extension WorkoutListViewController {
         super.viewDidLoad()
         
         model = WorkoutListModel(delegate: self)
+    }
+    @IBAction func doSort(_ sender: Any) {
+        let alertController = UIAlertController(title: "Do The Sorts", message: "How Sould you Like to sort", preferredStyle: .actionSheet)
+        alertController.setupForSort(handler: model)
+        self.present(alertController, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

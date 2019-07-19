@@ -37,3 +37,19 @@ extension WorkoutListModel: WorkoutCreationModelDelegate {
         delegate?.dataRefreshed()
     }
 }
+
+extension WorkoutListModel: WorkoutListSortDelegate {
+    func sort(withOption opt: SortOption) {
+        switch opt {
+        case .Duration:
+            workouts.sort{a, b in a.duration > b.duration}
+        case .CaloriesBurned:
+             workouts.sort{a, b in a.caloriesBurnedPerMinute > b.caloriesBurnedPerMinute}
+        case .DateAscending:
+             workouts.sort{a, b in a.date < b.date}
+        case .DateDescending:
+             workouts.sort{a, b in a.date > b.date}
+        }
+        delegate?.dataRefreshed()
+    }
+}
