@@ -32,7 +32,13 @@ extension WorkoutListModel {
 
 extension WorkoutListModel: WorkoutCreationModelDelegate {
     func save(workout: Workout) {
-        workouts.append(workout)
+        if let existingIndex = workouts.firstIndex(where: {(item) in item.id == workout.id}) {
+            workouts.remove(at: existingIndex)
+            workouts.insert(workout, at: existingIndex)
+        } else {
+                 workouts.append(workout)
+        }
+   
         persistence?.save(workout: workout)
         delegate?.dataRefreshed()
     }

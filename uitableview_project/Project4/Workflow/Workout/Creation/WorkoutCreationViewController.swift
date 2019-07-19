@@ -43,6 +43,9 @@ extension WorkoutCreationViewController {
         caloriesBurnedStepper.value = Double(model.workout.caloriesBurnedPerMinute)
         caloriesBurnedLabel.text = String(format: "%.1f", model.workout.caloriesBurnedPerMinute)
 
+        //set the button text for the add/edit workout button
+        self.title = model.isEdit ? "Edit Workout" : "Add Workout"
+        self.addWorkoutButton.setTitle(title, for: .normal)
     }
 }
 

@@ -12,25 +12,23 @@ final class WorkoutCreationModel {
     let maximumCaloriesBurnedStepperValue: Double = 20.0
     
     private(set) var workout: Workout
-    
+    private(set) var isEdit: Bool
     private weak var delegate: WorkoutCreationModelDelegate?
         
-    init(workout: Workout, delegate: WorkoutCreationModelDelegate) {
-        self.workout = workout
+    init(workout: Workout?, delegate: WorkoutCreationModelDelegate) {
+        self.workout = workout ?? Workout.defaultWorkout
         self.delegate = delegate
+        self.isEdit = workout != nil
     }
 }
 
 extension WorkoutCreationModel {
     func saveWorkout(name: String, date: Date, duration: Int, caloriesBurnedPerMinute: Double) {
-        delegate?.save(workout:
-            Workout(
-                id: workout.id,
-                name: name.isEmpty ? workout.name : name,
-                date: date,
-                duration: duration,
-                caloriesBurnedPerMinute: caloriesBurnedPerMinute
-            )
-        )
+        let updatedWorkout = Workout.fromWorkout(workout: self.workout,
+                                          newName: name,
+                                          newDate: date,
+                                          newDuration: duration,
+                                          newCaloriesBurnedPerMinute: caloriesBurnedPerMinute)
+        delegate?.save(workout: updatedWorkout)
     }
 }

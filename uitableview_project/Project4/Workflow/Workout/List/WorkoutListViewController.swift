@@ -21,7 +21,7 @@ extension WorkoutListViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let creationViewController = segue.destination as? WorkoutCreationViewController {
-            let workout: Workout = sender as? Workout ?? .defaultWorkout
+            let workout = sender as? Workout 
             let workoutCreationModel = WorkoutCreationModel(workout: workout, delegate: model)
             creationViewController.setup(model: workoutCreationModel)
         }
