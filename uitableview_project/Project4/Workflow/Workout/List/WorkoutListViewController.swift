@@ -19,6 +19,16 @@ extension WorkoutListViewController {
         self.present(alertController, animated: true)
     }
     
+    @IBAction func deleteAll(_ sender: Any) {
+        let alertController = UIAlertController(title: "Delete All Workouts", message: " Confirm", preferredStyle: .alert)
+        let yes = UIAlertAction(title: "yes", style: .default, handler: { (_) in self.model.deleteAll()})
+        let no = UIAlertAction(title: "Cancel", style: .cancel )
+        alertController.addAction(yes)
+        alertController.addAction(no)
+        self.present(alertController, animated: true)
+        
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let creationViewController = segue.destination as? WorkoutCreationViewController {
             let workout = sender as? Workout 

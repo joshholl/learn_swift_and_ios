@@ -28,6 +28,12 @@ extension WorkoutListModel {
     func workout(atIndex index: Int) -> Workout? {
         return workouts.element(at: index)
     }
+    
+    func deleteAll()  {
+        persistence?.removeAll()
+        workouts = persistence?.savedWorkouts ?? []
+        delegate?.dataRefreshed()
+    }
 }
 
 extension WorkoutListModel: WorkoutCreationModelDelegate {
@@ -45,16 +51,16 @@ extension WorkoutListModel: WorkoutCreationModelDelegate {
 }
 
 extension WorkoutListModel: WorkoutListSortDelegate {
-    func sort(withOption opt: SortOption) {
-        switch opt {
+    func sort(withOption option: SortOption) {
+        switch option {
         case .Duration:
             workouts.sort{a, b in a.duration > b.duration}
         case .CaloriesBurned:
-             workouts.sort{a, b in a.caloriesBurnedPerMinute > b.caloriesBurnedPerMinute}
+            workouts.sort{a, b in a.caloriesBurnedPerMinute > b.caloriesBurnedPerMinute}
         case .DateAscending:
-             workouts.sort{a, b in a.date < b.date}
+            workouts.sort{a, b in a.date < b.date}
         case .DateDescending:
-             workouts.sort{a, b in a.date > b.date}
+            workouts.sort{a, b in a.date > b.date}
         }
         delegate?.dataRefreshed()
     }
