@@ -6,6 +6,9 @@ struct Workout: Codable {
     let date: Date
     let duration: Int
     let caloriesBurnedPerMinute:Double
+    var caloriesBurned : Double {
+        return Double(duration) * caloriesBurnedPerMinute
+    }
 }
 
 extension Workout {

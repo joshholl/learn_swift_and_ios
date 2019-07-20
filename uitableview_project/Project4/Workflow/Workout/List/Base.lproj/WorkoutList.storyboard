@@ -77,7 +77,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="caloriesPerMinuteLabel" destination="VwJ-hg-cES" id="xBw-EX-IkK"/>
+                                            <outlet property="caloriesBurnedLabel" destination="VwJ-hg-cES" id="dFX-ZS-92X"/>
                                             <outlet property="dateLabel" destination="7Cp-3S-QGy" id="54e-xY-03f"/>
                                             <outlet property="durationLabel" destination="OIk-YR-Tzh" id="4SI-b1-Tfm"/>
                                             <outlet property="nameLabel" destination="lIt-xm-5Oa" id="31q-sk-gef"/>

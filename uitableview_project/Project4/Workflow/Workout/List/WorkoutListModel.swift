@@ -56,7 +56,7 @@ extension WorkoutListModel: WorkoutListSortDelegate {
         case .Duration:
             workouts.sort{a, b in a.duration > b.duration}
         case .CaloriesBurned:
-            workouts.sort{a, b in a.caloriesBurnedPerMinute > b.caloriesBurnedPerMinute}
+            workouts.sort{a, b in a.caloriesBurned > b.caloriesBurned }
         case .DateAscending:
             workouts.sort{a, b in a.date < b.date}
         case .DateDescending:
