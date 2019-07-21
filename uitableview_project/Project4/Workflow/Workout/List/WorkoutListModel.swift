@@ -34,6 +34,11 @@ extension WorkoutListModel {
         workouts = persistence?.savedWorkouts ?? []
         delegate?.dataRefreshed()
     }
+    func deleteWorkout(workout: Workout) {
+        persistence?.remove(workout: workout)
+        workouts = persistence?.savedWorkouts ?? []
+        delegate?.dataRefreshed()
+    }
 }
 
 extension WorkoutListModel: WorkoutUpsertModelDelegate {

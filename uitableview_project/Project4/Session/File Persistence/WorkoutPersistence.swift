@@ -4,6 +4,7 @@ protocol WorkoutPersistenceInterface {
     var savedWorkouts: [Workout] { get }
     func save(workout: Workout)
     func removeAll()
+    func remove(workout: Workout)
 }
 
 final class WorkoutPersistence: FileStoragePersistence, WorkoutPersistenceInterface {
@@ -29,5 +30,9 @@ final class WorkoutPersistence: FileStoragePersistence, WorkoutPersistenceInterf
     
     func removeAll() {
         names.forEach{ removeFile(withName: $0) }
+    }
+    
+    func remove(workout: Workout) {
+        removeFile(withName: workout.id.uuidString)
     }
 }

@@ -26,3 +26,9 @@ func createAlertForDeleteAll(handler: @escaping ActionHandler) -> UIAlertControl
     return alertController
 }
 
+func createAlertForDeleteWorkout(named: String, handler: @escaping ActionHandler) -> UIAlertController {
+    let alertController = UIAlertController(title: "Delete workout name \(named)?", message: "Confirm", preferredStyle: .alert)
+    alertController.addAction( UIAlertAction(title: "Yes", style: .default, handler: handler))
+    alertController.addAction( UIAlertAction(title: "Cancel", style: .cancel ))
+    return alertController
+}

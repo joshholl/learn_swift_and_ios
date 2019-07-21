@@ -22,6 +22,12 @@ extension WorkoutListViewController {
         
     }
     
+    func deleteWorkout(workout: Workout) {
+        self.present(createAlertForDeleteWorkout(named: workout.name,  handler: { (_) in
+            self.model.deleteWorkout(workout: workout)
+        }), animated: true)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let creationViewController = segue.destination as? WorkoutUpsertViewController {
             let workout = sender as? Workout 
@@ -54,6 +60,21 @@ extension WorkoutListViewController: UITableViewDelegate {
         
         performSegue(withIdentifier: "WorkoutUpsert", sender: cell.workout)
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        switch editingStyle {
+        case .delete:
+            let cell = tableView.cellForRow(at: indexPath) as! WorkoutListTableViewCell
+            
+            self.present(createAlertForDeleteWorkout(named: cell.workout.name, handler: { (_) in
+                self.model.deleteWorkout(workout: cell.workout)
+            }), animated: true)
+        
+        default:
+            break
+        }
+    }
+    
 }
 
 extension WorkoutListViewController: WorkoutListModelDelegate {

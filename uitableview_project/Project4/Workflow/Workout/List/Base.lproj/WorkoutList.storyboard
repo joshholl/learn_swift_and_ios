@@ -76,6 +76,7 @@
                                                 <constraint firstItem="iCw-lo-iXT" firstAttribute="leading" secondItem="Q2V-gf-eRL" secondAttribute="leadingMargin" id="dCN-ta-cC1"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <gestureRecognizers/>
                                         <connections>
                                             <outlet property="caloriesBurnedLabel" destination="VwJ-hg-cES" id="dFX-ZS-92X"/>
                                             <outlet property="dateLabel" destination="7Cp-3S-QGy" id="54e-xY-03f"/>
