@@ -1,6 +1,6 @@
 import UIKit
 
-final class WorkoutCreationViewController: UIViewController {
+final class WorkoutUpsertViewController: UIViewController {
     @IBOutlet private weak var nameField: UITextField!
     @IBOutlet private weak var dateField: UITextField!
     @IBOutlet private weak var minutesLabel: UILabel!
@@ -11,10 +11,10 @@ final class WorkoutCreationViewController: UIViewController {
     
     private var datePicker: UIDatePicker!
     
-    private var model: WorkoutCreationModel!
+    private var model: WorkoutUpsertModel!
 }
 
-extension WorkoutCreationViewController {
+extension WorkoutUpsertViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Configure date picker
@@ -44,18 +44,18 @@ extension WorkoutCreationViewController {
         caloriesBurnedLabel.text = String(format: "%.1f", model.workout.caloriesBurnedPerMinute)
 
         //set the button text for the add/edit workout button
-        self.title = model.isEdit ? "Edit Workout" : "Add Workout"
-        self.addWorkoutButton.setTitle(title, for: .normal)
+        self.title = model.actionName
+        self.addWorkoutButton.setTitle(model.actionName, for: .normal)
     }
 }
 
-extension WorkoutCreationViewController {
-    func setup(model: WorkoutCreationModel) {
+extension WorkoutUpsertViewController {
+    func setup(model: WorkoutUpsertModel) {
         self.model = model
     }
 }
 
-extension WorkoutCreationViewController {
+extension WorkoutUpsertViewController {
     @IBAction private func minutesValueChanged(_ sender: UIStepper) {
         minutesLabel.text = "\(Int(sender.value))"
     }
@@ -83,7 +83,7 @@ extension WorkoutCreationViewController {
     }
 }
 
-extension WorkoutCreationViewController: UITextFieldDelegate {
+extension WorkoutUpsertViewController: UITextFieldDelegate {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         return true
     }

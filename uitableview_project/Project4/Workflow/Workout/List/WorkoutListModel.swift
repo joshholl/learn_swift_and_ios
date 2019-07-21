@@ -36,7 +36,7 @@ extension WorkoutListModel {
     }
 }
 
-extension WorkoutListModel: WorkoutCreationModelDelegate {
+extension WorkoutListModel: WorkoutUpsertModelDelegate {
     func save(workout: Workout) {
         if let existingIndex = workouts.firstIndex(where: {(item) in item.id == workout.id}) {
             workouts.remove(at: existingIndex)

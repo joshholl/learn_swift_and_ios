@@ -111,7 +111,7 @@
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="Z5F-PG-zuh">
                                 <connections>
-                                    <segue destination="LTw-P0-mkB" kind="show" identifier="WorkoutCreation" id="XVI-Df-1Ek"/>
+                                    <segue destination="LTw-P0-mkB" kind="show" identifier="WorkoutUpsert" id="XVI-Df-1Ek"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="sort" id="r9x-a5-ReG">
@@ -130,10 +130,10 @@
             </objects>
             <point key="canvasLocation" x="1076" y="138.98050974512745"/>
         </scene>
-        <!--WorkoutCreation-->
+        <!--WorkoutUpsert-->
         <scene sceneID="lpp-2u-dK1">
             <objects>
-                <viewControllerPlaceholder storyboardName="WorkoutCreation" id="LTw-P0-mkB" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="WorkoutUpsert" id="LTw-P0-mkB" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2G3-fb-hdP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1758" y="139"/>

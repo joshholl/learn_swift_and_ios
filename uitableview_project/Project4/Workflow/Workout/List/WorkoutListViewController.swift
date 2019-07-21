@@ -23,9 +23,9 @@ extension WorkoutListViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let creationViewController = segue.destination as? WorkoutCreationViewController {
+        if let creationViewController = segue.destination as? WorkoutUpsertViewController {
             let workout = sender as? Workout 
-            let workoutCreationModel = WorkoutCreationModel(workout: workout, delegate: model)
+            let workoutCreationModel = WorkoutUpsertModel(workout: workout, delegate: model)
             creationViewController.setup(model: workoutCreationModel)
         }
     }
@@ -52,7 +52,7 @@ extension WorkoutListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! WorkoutListTableViewCell
         
-        performSegue(withIdentifier: "WorkoutCreation", sender: cell.workout)
+        performSegue(withIdentifier: "WorkoutUpsert", sender: cell.workout)
     }
 }
 

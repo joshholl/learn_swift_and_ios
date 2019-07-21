@@ -13,7 +13,7 @@
         <!--Add a Workout-->
         <scene sceneID="dHy-Hk-ur1">
             <objects>
-                <viewController title="Add a Workout" id="itG-V3-sRe" customClass="WorkoutCreationViewController" customModule="Project4" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Add a Workout" id="itG-V3-sRe" customClass="WorkoutUpsertViewController" customModule="Project4" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VQE-ea-YQA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
