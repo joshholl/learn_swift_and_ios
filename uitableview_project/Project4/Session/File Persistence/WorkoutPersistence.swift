@@ -17,7 +17,7 @@ final class WorkoutPersistence: FileStoragePersistence, WorkoutPersistenceInterf
     }
     
     var savedWorkouts: [Workout] {
-        return names.compactMap {
+        return ids.compactMap {
             guard let workoutData = read(fileWithId: $0) else { return nil }
             
             return try? JSONDecoder().decode(Workout.self, from: workoutData)
@@ -29,10 +29,10 @@ final class WorkoutPersistence: FileStoragePersistence, WorkoutPersistenceInterf
     }
     
     func removeAll() {
-        names.forEach{ removeFile(withName: $0) }
+        ids.forEach{ removeFile(withId: $0) }
     }
     
     func remove(workout: Workout) {
-        removeFile(withName: workout.id.uuidString)
+        removeFile(withId: workout.id.uuidString)
     }
 }
