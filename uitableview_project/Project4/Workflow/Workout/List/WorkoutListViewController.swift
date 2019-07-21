@@ -14,18 +14,11 @@ extension WorkoutListViewController {
         model = WorkoutListModel(delegate: self)
     }
     @IBAction func doSort(_ sender: Any) {
-        let alertController = UIAlertController(title: "Do The Sorts", message: "How Sould you Like to sort", preferredStyle: .actionSheet)
-        alertController.setupForSort(handler: model)
-        self.present(alertController, animated: true)
+        self.present(createAlertForSort(handler: model), animated: true)
     }
     
     @IBAction func deleteAll(_ sender: Any) {
-        let alertController = UIAlertController(title: "Delete All Workouts", message: " Confirm", preferredStyle: .alert)
-        let yes = UIAlertAction(title: "yes", style: .default, handler: { (_) in self.model.deleteAll()})
-        let no = UIAlertAction(title: "Cancel", style: .cancel )
-        alertController.addAction(yes)
-        alertController.addAction(no)
-        self.present(alertController, animated: true)
+        self.present(createAlertForDeleteAll(handler: {(_) in self.model.deleteAll()}), animated: true)
         
     }
     

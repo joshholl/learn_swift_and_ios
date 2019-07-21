@@ -223,22 +223,14 @@
 		41B9D55022C9752F000FF515 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				FDA1810B22E16F3D006B0721 /* Sort */,
+				FDA1810C22E16F64006B0721 /* SortOption.swift */,
+				FDA1810E22E16FF5006B0721 /* SortAlertViewController.swift */,
 				0365D6BA1F147F7F00678AF0 /* WorkoutListModel.swift */,
 				0365D6BC1F14841D00678AF0 /* WorkoutListTableViewCell.swift */,
 				038B5F231F0DECFB0057730A /* WorkoutListViewController.swift */,
 				038B5F251F0DECFB0057730A /* WorkoutList.storyboard */,
 			);
 			path = List;
-			sourceTree = "<group>";
-		};
-		FDA1810B22E16F3D006B0721 /* Sort */ = {
-			isa = PBXGroup;
-			children = (
-				FDA1810C22E16F64006B0721 /* SortOption.swift */,
-				FDA1810E22E16FF5006B0721 /* SortAlertViewController.swift */,
-			);
-			path = Sort;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
