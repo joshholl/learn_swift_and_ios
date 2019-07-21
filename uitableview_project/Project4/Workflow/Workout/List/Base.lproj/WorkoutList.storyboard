@@ -109,18 +109,16 @@
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Workout List" id="nlc-Pm-zJG">
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="add" id="Z5F-PG-zuh">
-                                <connections>
-                                    <segue destination="LTw-P0-mkB" kind="show" identifier="WorkoutUpsert" id="XVI-Df-1Ek"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="sort" id="r9x-a5-ReG">
-                                <connections>
-                                    <action selector="doSort:" destination="BYZ-38-t0r" id="095-1p-uta"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="leftBarButtonItem" title="Sort" id="r9x-a5-ReG">
+                            <connections>
+                                <action selector="doSort:" destination="BYZ-38-t0r" id="095-1p-uta"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Z5F-PG-zuh">
+                            <connections>
+                                <segue destination="LTw-P0-mkB" kind="show" identifier="WorkoutUpsert" id="XVI-Df-1Ek"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
