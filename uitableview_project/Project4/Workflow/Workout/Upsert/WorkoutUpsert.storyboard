@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="itG-V3-sRe">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add a Workout-->
+        <scene sceneID="dHy-Hk-ur1">
+            <objects>
+                <viewController title="Add a Workout" id="itG-V3-sRe" customClass="WorkoutUpsertViewController" customModule="Project4" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VQE-ea-YQA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="ELl-kw-cYH" userLabel="Main Stack View">
+                                <rect key="frame" x="20.5" y="172.5" width="373" height="193"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="A6F-bN-YRO" userLabel="Name Stack View">
+                                        <rect key="frame" x="0.0" y="0.0" width="373" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMa-37-lwX">
+                                                <rect key="frame" x="0.0" y="0.0" width="179" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7xE-Lf-KUV">
+                                                <rect key="frame" x="194" y="0.0" width="179" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="itG-V3-sRe" id="Kdz-1j-XzY"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="4BR-l4-kYk" userLabel="Date Stack View">
+                                        <rect key="frame" x="0.0" y="55" width="373" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSx-36-2J3">
+                                                <rect key="frame" x="0.0" y="0.0" width="179" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="egj-4V-OI0">
+                                                <rect key="frame" x="194" y="0.0" width="179" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="itG-V3-sRe" id="irg-Qs-eVx"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="zCe-ov-VYY" userLabel="Duration Stack View">
+                                        <rect key="frame" x="0.0" y="110" width="373" height="29"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVx-hq-hbX">
+                                                <rect key="frame" x="0.0" y="0.0" width="65.5" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nJG-le-mfn" userLabel="Minutes Stack View">
+                                                <rect key="frame" x="131.5" y="0.0" width="81.5" height="29"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CVr-tt-YgB">
+                                                        <rect key="frame" x="0.0" y="0.0" width="10.5" height="29"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sn3-rD-Oac">
+                                                        <rect key="frame" x="20.5" y="0.0" width="61" height="29"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="QKF-nY-vRd">
+                                                <rect key="frame" x="279" y="0.0" width="94" height="29"/>
+                                                <connections>
+                                                    <action selector="minutesValueChanged:" destination="itG-V3-sRe" eventType="valueChanged" id="Tcm-gu-FRb"/>
+                                                </connections>
+                                            </stepper>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="1GM-Bj-dyk" userLabel="Calories Per Minute Stack View">
+                                        <rect key="frame" x="0.0" y="164" width="373" height="29"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tf2-Nf-trC">
+                                                <rect key="frame" x="0.0" y="0.0" width="62.5" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2P2-x7-54m" userLabel="Calories Stack View">
+                                                <rect key="frame" x="129.5" y="0.0" width="83" height="29"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPN-rs-E7Q">
+                                                        <rect key="frame" x="0.0" y="0.0" width="10.5" height="29"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wdc-FR-VWh" userLabel="Calories">
+                                                        <rect key="frame" x="20.5" y="0.0" width="62.5" height="29"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" stepValue="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="9Zv-ny-iat">
+                                                <rect key="frame" x="279" y="0.0" width="94" height="29"/>
+                                                <connections>
+                                                    <action selector="caloriesPerMinuiteValueChanged:" destination="itG-V3-sRe" eventType="valueChanged" id="qjr-XR-AtO"/>
+                                                </connections>
+                                            </stepper>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gEh-8i-kvp">
+                                <rect key="frame" x="157" y="415.5" width="100" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Add Workout"/>
+                                <connections>
+                                    <action selector="addWorkoutButtonTapped:" destination="itG-V3-sRe" eventType="touchUpInside" id="i5s-As-QpE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="ELl-kw-cYH" firstAttribute="width" secondItem="VQE-ea-YQA" secondAttribute="width" multiplier="0.9" id="5lt-6h-srr"/>
+                            <constraint firstItem="gEh-8i-kvp" firstAttribute="top" secondItem="ELl-kw-cYH" secondAttribute="bottom" constant="50" id="HiB-IN-Vhp"/>
+                            <constraint firstItem="ELl-kw-cYH" firstAttribute="centerY" secondItem="VQE-ea-YQA" secondAttribute="centerY" multiplier="0.6" id="flR-fs-0sI"/>
+                            <constraint firstItem="gEh-8i-kvp" firstAttribute="centerX" secondItem="ifZ-AY-gGd" secondAttribute="centerX" id="hCk-bz-Shb"/>
+                            <constraint firstItem="ELl-kw-cYH" firstAttribute="centerX" secondItem="ifZ-AY-gGd" secondAttribute="centerX" id="qYx-1V-mrd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ifZ-AY-gGd"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="7sc-8W-Dhp" appends="YES" id="fNA-oo-lq7"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="addWorkoutButton" destination="gEh-8i-kvp" id="4bN-qQ-cAx"/>
+                        <outlet property="caloriesBurnedLabel" destination="qPN-rs-E7Q" id="Krc-GA-HF3"/>
+                        <outlet property="caloriesBurnedStepper" destination="9Zv-ny-iat" id="Moc-Ux-iSn"/>
+                        <outlet property="dateField" destination="egj-4V-OI0" id="wpX-5x-tEl"/>
+                        <outlet property="minutesLabel" destination="CVr-tt-YgB" id="URe-iM-15z"/>
+                        <outlet property="minutesStepper" destination="QKF-nY-vRd" id="rh3-rm-QMb"/>
+                        <outlet property="nameField" destination="7xE-Lf-KUV" id="Iug-26-BLA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hgW-oS-vvz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="7sc-8W-Dhp">
+                    <connections>
+                        <action selector="viewTapped:" destination="itG-V3-sRe" id="Axi-5h-LFh"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2026.4000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+</document>
