@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6Mt-cl-kfb">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Current Gpa View Controller-->
+        <scene sceneID="kCb-Ec-Did">
+            <objects>
+                <viewController id="6Mt-cl-kfb" customClass="CurrentGpaViewController" customModule="TritonCalc" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h0m-tT-qNn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Q3d-nY-Huq" userLabel="Main Stack View">
+                                <rect key="frame" x="19" y="111" width="337.5" height="190.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Standing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F0M-Xf-Cp5">
+                                        <rect key="frame" x="0.0" y="0.0" width="337.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="UmslLightGray"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Sql-FV-DG5">
+                                        <rect key="frame" x="0.0" y="40.5" width="337.5" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours Completed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ypO-vD-4p2">
+                                                <rect key="frame" x="0.0" y="0.0" width="134.5" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" name="UmslLightGray"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q5T-30-kgF">
+                                                <rect key="frame" x="149.5" y="0.0" width="188" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Mgc-cT-hWa">
+                                        <rect key="frame" x="0.0" y="90.5" width="337.5" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current GPA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DnX-Jh-LLH">
+                                                <rect key="frame" x="0.0" y="0.0" width="134.5" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" name="UmslLightGray"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QPg-eo-lEy">
+                                                <rect key="frame" x="149.5" y="0.0" width="188" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="acc-GQ-6yI">
+                                        <rect key="frame" x="0.0" y="140.5" width="337.5" height="50"/>
+                                        <state key="normal" title="Save">
+                                            <color key="titleColor" name="UmslYellow"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveButtonTapped:" destination="6Mt-cl-kfb" eventType="touchUpInside" id="uBJ-LT-K03"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="QPg-eo-lEy" firstAttribute="leading" secondItem="Q5T-30-kgF" secondAttribute="leading" id="C8K-pQ-qWf"/>
+                                </constraints>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MascotWithShadow" translatesAutoresizingMaskIntoConstraints="NO" id="Pic-Y7-MaP">
+                                <rect key="frame" x="112.5" y="361.5" width="150" height="240"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" name="UmslRed"/>
+                        <constraints>
+                            <constraint firstItem="Q3d-nY-Huq" firstAttribute="width" secondItem="h0m-tT-qNn" secondAttribute="width" multiplier="0.9" id="7a9-yP-MiL"/>
+                            <constraint firstItem="Q3d-nY-Huq" firstAttribute="centerY" secondItem="Xjz-ay-EMs" secondAttribute="centerY" multiplier="0.6" id="7eA-4n-as0"/>
+                            <constraint firstItem="Q3d-nY-Huq" firstAttribute="centerX" secondItem="Xjz-ay-EMs" secondAttribute="centerX" id="BGL-7E-CBM"/>
+                            <constraint firstItem="Q3d-nY-Huq" firstAttribute="bottom" secondItem="acc-GQ-6yI" secondAttribute="top" constant="50" id="MhU-4g-Kfi"/>
+                            <constraint firstItem="Pic-Y7-MaP" firstAttribute="centerX" secondItem="Xjz-ay-EMs" secondAttribute="centerX" id="SX7-84-rxU"/>
+                            <constraint firstItem="acc-GQ-6yI" firstAttribute="centerX" secondItem="Xjz-ay-EMs" secondAttribute="centerX" id="X3e-te-iGW"/>
+                            <constraint firstItem="Pic-Y7-MaP" firstAttribute="top" secondItem="Q3d-nY-Huq" secondAttribute="bottom" constant="60" id="sKU-uZ-3B6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Xjz-ay-EMs"/>
+                    </view>
+                    <connections>
+                        <outlet property="gpa" destination="QPg-eo-lEy" id="2x3-Ib-Kho"/>
+                        <outlet property="numberOfHours" destination="Q5T-30-kgF" id="FtU-cy-m4s"/>
+                        <outlet property="saveButton" destination="acc-GQ-6yI" id="8Fz-rU-nlg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ar5-vF-DAt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="MascotWithShadow" width="150" height="240"/>
+        <namedColor name="UmslLightGray">
+            <color red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="UmslRed">
+            <color red="0.59607843137254901" green="0.11764705882352941" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="UmslYellow">
+            <color red="0.91764705882352937" green="0.6705882352941176" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

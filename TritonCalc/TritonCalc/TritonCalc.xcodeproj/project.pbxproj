@@ -12,11 +12,20 @@
 		FD0C929022F615A500BCB7AB /* CourseListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0C928F22F615A500BCB7AB /* CourseListModel.swift */; };
 		FD522DAF22F3D9540026FE69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD522DAE22F3D9540026FE69 /* AppDelegate.swift */; };
 		FD522DB122F3D9540026FE69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD522DB022F3D9540026FE69 /* ViewController.swift */; };
-		FD522DB422F3D9540026FE69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD522DB222F3D9540026FE69 /* Main.storyboard */; };
 		FD522DB622F3D9550026FE69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD522DB522F3D9550026FE69 /* Assets.xcassets */; };
 		FD522DB922F3D9550026FE69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD522DB722F3D9550026FE69 /* LaunchScreen.storyboard */; };
 		FD522DC222F3D9FD0026FE69 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD522DC122F3D9FD0026FE69 /* Course.swift */; };
 		FD522DC922F3E84B0026FE69 /* CourseListTableVliewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD522DC822F3E84B0026FE69 /* CourseListTableVliewCell.swift */; };
+		FDD955DF22F72D7E003D4625 /* mascot.png in Resources */ = {isa = PBXBuildFile; fileRef = FDD955DE22F72D7E003D4625 /* mascot.png */; };
+		FDD955E122F72E38003D4625 /* CurrentGpa.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD955E022F72E38003D4625 /* CurrentGpa.storyboard */; };
+		FDD955E322F72E62003D4625 /* CurrentGpaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD955E222F72E62003D4625 /* CurrentGpaViewController.swift */; };
+		FDD955E522F73CA8003D4625 /* mascot_with_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = FDD955E422F73CA8003D4625 /* mascot_with_shadow.png */; };
+		FDD955E722F76328003D4625 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD955E622F76328003D4625 /* Main.storyboard */; };
+		FDD955EA22F76490003D4625 /* OverviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD955E922F76490003D4625 /* OverviewModel.swift */; };
+		FDD955EC22F764DB003D4625 /* GradePointAverage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD955EB22F764DB003D4625 /* GradePointAverage.swift */; };
+		FDD955EE22F76750003D4625 /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD955ED22F76750003D4625 /* OverviewViewController.swift */; };
+		FDD955F022F7676C003D4625 /* Overview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD955EF22F7676C003D4625 /* Overview.storyboard */; };
+		FDD955F522F77DBE003D4625 /* DoubleHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD955F422F77DBE003D4625 /* DoubleHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,12 +35,21 @@
 		FD522DAB22F3D9540026FE69 /* TritonCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TritonCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD522DAE22F3D9540026FE69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD522DB022F3D9540026FE69 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FD522DB322F3D9540026FE69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FD522DB522F3D9550026FE69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD522DB822F3D9550026FE69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD522DBA22F3D9550026FE69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD522DC122F3D9FD0026FE69 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		FD522DC822F3E84B0026FE69 /* CourseListTableVliewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListTableVliewCell.swift; sourceTree = "<group>"; };
+		FDD955DE22F72D7E003D4625 /* mascot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mascot.png; sourceTree = "<group>"; };
+		FDD955E022F72E38003D4625 /* CurrentGpa.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CurrentGpa.storyboard; sourceTree = "<group>"; };
+		FDD955E222F72E62003D4625 /* CurrentGpaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentGpaViewController.swift; sourceTree = "<group>"; };
+		FDD955E422F73CA8003D4625 /* mascot_with_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mascot_with_shadow.png; sourceTree = "<group>"; };
+		FDD955E622F76328003D4625 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		FDD955E922F76490003D4625 /* OverviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewModel.swift; sourceTree = "<group>"; };
+		FDD955EB22F764DB003D4625 /* GradePointAverage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradePointAverage.swift; sourceTree = "<group>"; };
+		FDD955ED22F76750003D4625 /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
+		FDD955EF22F7676C003D4625 /* Overview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Overview.storyboard; sourceTree = "<group>"; };
+		FDD955F422F77DBE003D4625 /* DoubleHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,11 +82,15 @@
 		FD522DAD22F3D9540026FE69 /* TritonCalc */ = {
 			isa = PBXGroup;
 			children = (
-				FD522DC322F3E5F50026FE69 /* GradePointAverage */,
+				FDD955F322F77DA1003D4625 /* Utilities */,
+				FDD955E822F763ED003D4625 /* Overview */,
+				FDD955DB22F682EF003D4625 /* CurrentGpa */,
+				FD522DC322F3E5F50026FE69 /* Courses */,
 				FD522DC022F3D9CA0026FE69 /* Supporting Files */,
 				FD522DAE22F3D9540026FE69 /* AppDelegate.swift */,
 				FD522DB022F3D9540026FE69 /* ViewController.swift */,
-				FD522DB222F3D9540026FE69 /* Main.storyboard */,
+				FDD955E622F76328003D4625 /* Main.storyboard */,
+				FDD955EB22F764DB003D4625 /* GradePointAverage.swift */,
 			);
 			path = TritonCalc;
 			sourceTree = "<group>";
@@ -76,6 +98,8 @@
 		FD522DC022F3D9CA0026FE69 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FDD955E422F73CA8003D4625 /* mascot_with_shadow.png */,
+				FDD955DE22F72D7E003D4625 /* mascot.png */,
 				FD522DB722F3D9550026FE69 /* LaunchScreen.storyboard */,
 				FD522DB522F3D9550026FE69 /* Assets.xcassets */,
 				FD522DBA22F3D9550026FE69 /* Info.plist */,
@@ -83,14 +107,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		FD522DC322F3E5F50026FE69 /* GradePointAverage */ = {
+		FD522DC322F3E5F50026FE69 /* Courses */ = {
 			isa = PBXGroup;
 			children = (
 				FD522DC122F3D9FD0026FE69 /* Course.swift */,
 				FD522DC522F3E6310026FE69 /* Course */,
 				FD522DC422F3E6210026FE69 /* CourseList */,
 			);
-			path = GradePointAverage;
+			path = Courses;
 			sourceTree = "<group>";
 		};
 		FD522DC422F3E6210026FE69 /* CourseList */ = {
@@ -109,6 +133,33 @@
 			children = (
 			);
 			path = Course;
+			sourceTree = "<group>";
+		};
+		FDD955DB22F682EF003D4625 /* CurrentGpa */ = {
+			isa = PBXGroup;
+			children = (
+				FDD955E022F72E38003D4625 /* CurrentGpa.storyboard */,
+				FDD955E222F72E62003D4625 /* CurrentGpaViewController.swift */,
+			);
+			path = CurrentGpa;
+			sourceTree = "<group>";
+		};
+		FDD955E822F763ED003D4625 /* Overview */ = {
+			isa = PBXGroup;
+			children = (
+				FDD955E922F76490003D4625 /* OverviewModel.swift */,
+				FDD955ED22F76750003D4625 /* OverviewViewController.swift */,
+				FDD955EF22F7676C003D4625 /* Overview.storyboard */,
+			);
+			path = Overview;
+			sourceTree = "<group>";
+		};
+		FDD955F322F77DA1003D4625 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				FDD955F422F77DBE003D4625 /* DoubleHelpers.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,10 +220,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDD955E722F76328003D4625 /* Main.storyboard in Resources */,
+				FDD955F022F7676C003D4625 /* Overview.storyboard in Resources */,
+				FDD955E522F73CA8003D4625 /* mascot_with_shadow.png in Resources */,
+				FDD955DF22F72D7E003D4625 /* mascot.png in Resources */,
 				FD522DB922F3D9550026FE69 /* LaunchScreen.storyboard in Resources */,
 				FD0C928C22F60BDA00BCB7AB /* CourseList.storyboard in Resources */,
+				FDD955E122F72E38003D4625 /* CurrentGpa.storyboard in Resources */,
 				FD522DB622F3D9550026FE69 /* Assets.xcassets in Resources */,
-				FD522DB422F3D9540026FE69 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,11 +238,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDD955EA22F76490003D4625 /* OverviewModel.swift in Sources */,
+				FDD955EE22F76750003D4625 /* OverviewViewController.swift in Sources */,
 				FD522DB122F3D9540026FE69 /* ViewController.swift in Sources */,
 				FD522DC922F3E84B0026FE69 /* CourseListTableVliewCell.swift in Sources */,
+				FDD955E322F72E62003D4625 /* CurrentGpaViewController.swift in Sources */,
 				FD522DAF22F3D9540026FE69 /* AppDelegate.swift in Sources */,
 				FD0C928E22F60D0A00BCB7AB /* CourseListTableViewController.swift in Sources */,
+				FDD955F522F77DBE003D4625 /* DoubleHelpers.swift in Sources */,
 				FD0C929022F615A500BCB7AB /* CourseListModel.swift in Sources */,
+				FDD955EC22F764DB003D4625 /* GradePointAverage.swift in Sources */,
 				FD522DC222F3D9FD0026FE69 /* Course.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,14 +255,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		FD522DB222F3D9540026FE69 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FD522DB322F3D9540026FE69 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FD522DB722F3D9550026FE69 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

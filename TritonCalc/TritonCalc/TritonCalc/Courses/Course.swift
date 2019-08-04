@@ -11,15 +11,12 @@ public struct Course {
     var points: Double {
         return Double(creditHours) * grade.rawValue.pointValue
     }
-    
 }
-
 
 struct Grade {
     let letter: String
     let pointValue: Double
 }
-
 
 
 enum LetterGrade: RawRepresentable, CaseIterable {

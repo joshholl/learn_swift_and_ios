@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="L9e-gK-I0i">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--GPA Overview-->
+        <scene sceneID="0hD-6i-ex2">
+            <objects>
+                <viewController id="L9e-gK-I0i" customClass="OverviewViewController" customModule="TritonCalc" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kRY-Qo-508">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vi6-6r-JfY" userLabel="Main Stack View">
+                                <rect key="frame" x="19" y="143.5" width="337.5" height="400"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="oba-Sa-dld" userLabel="Completed Hours Stack View">
+                                        <rect key="frame" x="0.0" y="0.0" width="337.5" height="148"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completed Hours" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cue-t1-nNq">
+                                                <rect key="frame" x="0.0" y="0.0" width="337.5" height="26.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <color key="textColor" name="UmslYellow"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="XB6-vK-kPa">
+                                                <rect key="frame" x="0.0" y="46.5" width="337.5" height="20.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Hours Completed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1P1-hm-sHf">
+                                                        <rect key="frame" x="0.0" y="0.0" width="236" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" name="UmslLightGray"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tkl-HA-WVK">
+                                                        <rect key="frame" x="251" y="0.0" width="86.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" name="UmslLightestGray"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="1P1-hm-sHf" firstAttribute="width" secondItem="XB6-vK-kPa" secondAttribute="width" multiplier="0.7" id="kDy-fF-9Es"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wIS-ks-F2r">
+                                                <rect key="frame" x="0.0" y="87" width="337.5" height="20.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points Earned" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qUJ-1f-Tau">
+                                                        <rect key="frame" x="0.0" y="0.0" width="251" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" name="UmslLightGray"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGa-Iw-jwL">
+                                                        <rect key="frame" x="251" y="0.0" width="86.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" name="UmslLightestGray"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y6k-U6-Xeh">
+                                                <rect key="frame" x="0.0" y="127.5" width="337.5" height="20.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GPA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xng-HD-1CQ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="251" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" name="UmslLightGray"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VMr-Wq-ho6">
+                                                        <rect key="frame" x="251" y="0.0" width="86.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" name="UmslLightestGray"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="hGa-Iw-jwL" firstAttribute="leading" secondItem="Tkl-HA-WVK" secondAttribute="leading" id="2BQ-o7-Lwa"/>
+                                            <constraint firstItem="VMr-Wq-ho6" firstAttribute="leading" secondItem="Tkl-HA-WVK" secondAttribute="leading" id="Kbd-pR-5fC"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Gw2-ZL-JhT" userLabel="Projected Hours Stack View">
+                                        <rect key="frame" x="0.0" y="168" width="337.5" height="148"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Projected Hours" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="upY-6f-nM7">
+                                                <rect key="frame" x="0.0" y="0.0" width="337.5" height="26.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <color key="textColor" name="UmslYellow"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="gDA-T6-Hu4">
+                                                <rect key="frame" x="0.0" y="46.5" width="337.5" height="20.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Hours Completed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xor-WX-wrN">
+                                                        <rect key="frame" x="0.0" y="0.0" width="236" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" name="UmslLightGray"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tje-86-YWI">
+                                                        <rect key="frame" x="251" y="0.0" width="86.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" name="UmslLightestGray"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="xor-WX-wrN" firstAttribute="width" secondItem="gDA-T6-Hu4" secondAttribute="width" multiplier="0.7" id="4h3-xx-6Vm"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xL8-mH-r65">
+                                                <rect key="frame" x="0.0" y="87" width="337.5" height="20.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points Earned" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Yi-au-dVm">
+                                                        <rect key="frame" x="0.0" y="0.0" width="251" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" name="UmslLightGray"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NaC-lb-4E8">
+                                                        <rect key="frame" x="251" y="0.0" width="86.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" name="UmslLightestGray"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fuJ-ST-APq">
+                                                <rect key="frame" x="0.0" y="127.5" width="337.5" height="20.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GPA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0g0-RN-nCm">
+                                                        <rect key="frame" x="0.0" y="0.0" width="251" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" name="UmslLightGray"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zM-zc-awC">
+                                                        <rect key="frame" x="251" y="0.0" width="86.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" name="UmslLightestGray"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="0zM-zc-awC" firstAttribute="leading" secondItem="tje-86-YWI" secondAttribute="leading" id="n4A-nQ-7RW"/>
+                                            <constraint firstItem="NaC-lb-4E8" firstAttribute="leading" secondItem="tje-86-YWI" secondAttribute="leading" id="rxv-jk-hZd"/>
+                                        </constraints>
+                                    </stackView>
+                                    <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XBP-mM-hd6">
+                                        <rect key="frame" x="0.0" y="336" width="337.5" height="64"/>
+                                        <color key="backgroundColor" name="UmslRed"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" name="UmslRed"/>
+                        <constraints>
+                            <constraint firstItem="vi6-6r-JfY" firstAttribute="centerY" secondItem="y3i-T5-OCx" secondAttribute="centerY" id="4qn-oK-K98"/>
+                            <constraint firstItem="vi6-6r-JfY" firstAttribute="height" secondItem="kRY-Qo-508" secondAttribute="height" multiplier="0.6" id="90f-JU-cjE"/>
+                            <constraint firstItem="vi6-6r-JfY" firstAttribute="width" secondItem="kRY-Qo-508" secondAttribute="width" multiplier="0.9" id="JKj-yi-kzE"/>
+                            <constraint firstItem="vi6-6r-JfY" firstAttribute="centerX" secondItem="y3i-T5-OCx" secondAttribute="centerX" id="UHg-hG-jrD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="y3i-T5-OCx"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="GPA Overview" id="2YP-8T-5j1">
+                        <barButtonItem key="leftBarButtonItem" title="✔︎" id="FCP-JJ-TDu">
+                            <color key="tintColor" name="UmslLightestGray"/>
+                            <connections>
+                                <segue destination="TRC-Fz-5us" kind="popoverPresentation" identifier="showCurrentGpa" popoverAnchorBarButtonItem="FCP-JJ-TDu" id="yLQ-c9-LBQ">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="actualGPA" destination="VMr-Wq-ho6" id="Q1t-G9-2Aa"/>
+                        <outlet property="actualHoursCompleted" destination="Tkl-HA-WVK" id="zBE-Aq-8aW"/>
+                        <outlet property="actualPointsEarned" destination="hGa-Iw-jwL" id="aJ6-95-e97"/>
+                        <outlet property="projectedGPA" destination="0zM-zc-awC" id="fCf-jn-5iH"/>
+                        <outlet property="projectedHoursCompleted" destination="tje-86-YWI" id="2IZ-fP-s2X"/>
+                        <outlet property="projectedPointsEarned" destination="NaC-lb-4E8" id="2Rq-N5-UK2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Ag-T6-PUg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="342" y="-109"/>
+        </scene>
+        <!--CurrentGpa-->
+        <scene sceneID="Q64-JI-iQG">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CurrentGpa" id="TRC-Fz-5us" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ckD-fg-hIF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1154" y="-110"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="UmslLightGray">
+            <color red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="UmslLightestGray">
+            <color red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="UmslRed">
+            <color red="0.59607843137254901" green="0.11764705882352941" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="UmslYellow">
+            <color red="0.91764705882352937" green="0.6705882352941176" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
