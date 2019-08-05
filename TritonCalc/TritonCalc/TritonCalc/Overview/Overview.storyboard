@@ -185,6 +185,12 @@
                                 </segue>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="organize" id="5vv-Zg-Xtq">
+                            <color key="tintColor" name="UmslLightestGray"/>
+                            <connections>
+                                <segue destination="5gi-FO-Vwh" kind="show" id="ShM-Fy-Gak"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="actualGPA" destination="VMr-Wq-ho6" id="Q1t-G9-2Aa"/>
@@ -206,6 +212,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ckD-fg-hIF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1154" y="-110"/>
+        </scene>
+        <!--CourseList-->
+        <scene sceneID="1oG-vG-9aX">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CourseList" id="5gi-FO-Vwh" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zYQ-YI-8FO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1157" y="-356"/>
         </scene>
     </scenes>
     <resources>

@@ -10,30 +10,74 @@ import Foundation
 import UIKit
 final class CourseListTableViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
-    private var model: CourseListCollectionModel!
-    
-    
-
-
-
+    private var model: CourseListModel!
 }
+
+extension CourseListTableViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        model = CourseListModel(delegate: self)
+    }
+}
+
+
+extension CourseListTableViewController: CourseListModelDelegate {
+    func dataRefreshed() {
+        tableView.reloadData()
+    }
+    
+    
+}
+extension CourseListTableViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let upsertController = segue.destination as? CourseUpsertViewController {
+            let course = sender as? Course
+            let courseModel = CourseUpsertModel(course: course, delegate: model)
+            upsertController.for(model: courseModel)
+        }
+    }
+}
+
 
 extension CourseListTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.model.listAt(index: section)?.count ?? 0
+        return model.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let course = model.listAt(index: indexPath.section)!.courseAt(index: indexPath.row)!
-
-        
-        
-        
-        
-        
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "CourseCell", for: indexPath) as! CourseListTableViewCell
+        
+        let course = model.course(at: indexPath.row)!
         cell.forCourse(course)
+        
         return cell
     }
+    
+}
+
+extension CourseListTableViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(model.rowHeight)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! CourseListTableViewCell
+        
+        performSegue(withIdentifier: "showUpsert", sender: cell.course)
+    }
+    
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        switch editingStyle {
+//        case .delete:
+//            let cell = tableView.cellForRow(at: indexPath) as! CourseListTableViewCell
+//
+//            self.present(createAlertForDeleteWorkout(named: cell.workout.name, handler: { (_) in
+//                self.model.deleteWorkout(workout: cell.workout)
+//            }), animated: true)
+//
+//        default:
+//            break
+//        }
+//    }
 }

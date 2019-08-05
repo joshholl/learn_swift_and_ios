@@ -25,7 +25,11 @@
 		FDD955EC22F764DB003D4625 /* GradePointAverage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD955EB22F764DB003D4625 /* GradePointAverage.swift */; };
 		FDD955EE22F76750003D4625 /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD955ED22F76750003D4625 /* OverviewViewController.swift */; };
 		FDD955F022F7676C003D4625 /* Overview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD955EF22F7676C003D4625 /* Overview.storyboard */; };
-		FDD955F522F77DBE003D4625 /* DoubleHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD955F422F77DBE003D4625 /* DoubleHelpers.swift */; };
+		FDD955F522F77DBE003D4625 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD955F422F77DBE003D4625 /* Double.swift */; };
+		FDD955F722F79BDC003D4625 /* CourseUpsert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD955F622F79BDC003D4625 /* CourseUpsert.storyboard */; };
+		FDD955F922F79C02003D4625 /* CourseUpsertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD955F822F79C02003D4625 /* CourseUpsertViewController.swift */; };
+		FDE5949222F7C87D0075D2D3 /* CourseUpsertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE5949122F7C87D0075D2D3 /* CourseUpsertModel.swift */; };
+		FDE5949422F7D57B0075D2D3 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE5949322F7D57B0075D2D3 /* Array.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +53,11 @@
 		FDD955EB22F764DB003D4625 /* GradePointAverage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradePointAverage.swift; sourceTree = "<group>"; };
 		FDD955ED22F76750003D4625 /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		FDD955EF22F7676C003D4625 /* Overview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Overview.storyboard; sourceTree = "<group>"; };
-		FDD955F422F77DBE003D4625 /* DoubleHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleHelpers.swift; sourceTree = "<group>"; };
+		FDD955F422F77DBE003D4625 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		FDD955F622F79BDC003D4625 /* CourseUpsert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CourseUpsert.storyboard; sourceTree = "<group>"; };
+		FDD955F822F79C02003D4625 /* CourseUpsertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseUpsertViewController.swift; sourceTree = "<group>"; };
+		FDE5949122F7C87D0075D2D3 /* CourseUpsertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseUpsertModel.swift; sourceTree = "<group>"; };
+		FDE5949322F7D57B0075D2D3 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +90,7 @@
 		FD522DAD22F3D9540026FE69 /* TritonCalc */ = {
 			isa = PBXGroup;
 			children = (
-				FDD955F322F77DA1003D4625 /* Utilities */,
+				FDD955F322F77DA1003D4625 /* Extensions */,
 				FDD955E822F763ED003D4625 /* Overview */,
 				FDD955DB22F682EF003D4625 /* CurrentGpa */,
 				FD522DC322F3E5F50026FE69 /* Courses */,
@@ -131,6 +139,9 @@
 		FD522DC522F3E6310026FE69 /* Course */ = {
 			isa = PBXGroup;
 			children = (
+				FDD955F622F79BDC003D4625 /* CourseUpsert.storyboard */,
+				FDD955F822F79C02003D4625 /* CourseUpsertViewController.swift */,
+				FDE5949122F7C87D0075D2D3 /* CourseUpsertModel.swift */,
 			);
 			path = Course;
 			sourceTree = "<group>";
@@ -154,12 +165,13 @@
 			path = Overview;
 			sourceTree = "<group>";
 		};
-		FDD955F322F77DA1003D4625 /* Utilities */ = {
+		FDD955F322F77DA1003D4625 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				FDD955F422F77DBE003D4625 /* DoubleHelpers.swift */,
+				FDD955F422F77DBE003D4625 /* Double.swift */,
+				FDE5949322F7D57B0075D2D3 /* Array.swift */,
 			);
-			path = Utilities;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +238,7 @@
 				FDD955DF22F72D7E003D4625 /* mascot.png in Resources */,
 				FD522DB922F3D9550026FE69 /* LaunchScreen.storyboard in Resources */,
 				FD0C928C22F60BDA00BCB7AB /* CourseList.storyboard in Resources */,
+				FDD955F722F79BDC003D4625 /* CourseUpsert.storyboard in Resources */,
 				FDD955E122F72E38003D4625 /* CurrentGpa.storyboard in Resources */,
 				FD522DB622F3D9550026FE69 /* Assets.xcassets in Resources */,
 			);
@@ -242,10 +255,13 @@
 				FDD955EE22F76750003D4625 /* OverviewViewController.swift in Sources */,
 				FD522DB122F3D9540026FE69 /* ViewController.swift in Sources */,
 				FD522DC922F3E84B0026FE69 /* CourseListTableVliewCell.swift in Sources */,
+				FDE5949222F7C87D0075D2D3 /* CourseUpsertModel.swift in Sources */,
 				FDD955E322F72E62003D4625 /* CurrentGpaViewController.swift in Sources */,
 				FD522DAF22F3D9540026FE69 /* AppDelegate.swift in Sources */,
 				FD0C928E22F60D0A00BCB7AB /* CourseListTableViewController.swift in Sources */,
-				FDD955F522F77DBE003D4625 /* DoubleHelpers.swift in Sources */,
+				FDD955F522F77DBE003D4625 /* Double.swift in Sources */,
+				FDE5949422F7D57B0075D2D3 /* Array.swift in Sources */,
+				FDD955F922F79C02003D4625 /* CourseUpsertViewController.swift in Sources */,
 				FD0C929022F615A500BCB7AB /* CourseListModel.swift in Sources */,
 				FDD955EC22F764DB003D4625 /* GradePointAverage.swift in Sources */,
 				FD522DC222F3D9FD0026FE69 /* Course.swift in Sources */,

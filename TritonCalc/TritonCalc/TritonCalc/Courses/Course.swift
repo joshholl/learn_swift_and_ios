@@ -5,11 +5,18 @@ import Foundation
 public struct Course {
     let name: String
     let creditHours: Int
-    let grade: LetterGrade
-    var isProjected: Bool
-    
+    let grade: LetterGrade?
     var points: Double {
-        return Double(creditHours) * grade.rawValue.pointValue
+        guard let pointValue = grade?.rawValue.pointValue else {
+            return 0
+        }
+        return Double(creditHours) * pointValue
+    }
+}
+
+extension Course {
+    static var `default`: Course {
+        return Course(name: "", creditHours: 0, grade: nil)
     }
 }
 

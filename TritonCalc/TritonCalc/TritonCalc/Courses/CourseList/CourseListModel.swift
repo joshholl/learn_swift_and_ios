@@ -9,56 +9,42 @@
 import Foundation
 import UIKit
 
-final class CourseList {
-    private var courses: [Course]
-    private(set) var name: String
-    
-    var count : Int {
-        return courses.count
-    }
-    
+
+typealias CourseList = [Course]
+
+extension CourseList {
     var totalHours: Int {
-        return courses.reduce(0, { sum, next in sum + next.creditHours })
-    }
-    
-    
-    init(name: String) {
-        self.courses = []
-        self.name = name
-    }
-    
-    func courseAt(index: Int) -> Course? {
-        guard index >= 0 && index < count else {
-            return nil
-        }
-        return courses[index]
+        return self.reduce(0, { sum, next in sum + next.creditHours })
     }
 }
 
-
-protocol CourseListCollectionModelDelegate: class {
-    func courseListChanged(courseListIndex: Int)
+protocol CourseListModelDelegate {
+    func dataRefreshed()
 }
 
 
-final class CourseListCollectionModel {
-    private var courseLists: [CourseList]
-    private weak var delegate: CourseListCollectionModelDelegate?
+final class CourseListModel {
+    private var courseList: CourseList
+    private var delegate: CourseListModelDelegate
+    var count: Int { return courseList.count }
+    let rowHeight: Double = 64.0
     
-    var numberOfLists: Int {
-        return courseLists.count
-    }
-    
-    init(delegate: CourseListCollectionModelDelegate) {
+    init(delegate: CourseListModelDelegate) {
         self.delegate = delegate
-        courseLists = [CourseList(name: "Completed Courses"), CourseList(name: "Projected/In Progress Courses")]
+        self.courseList = CourseList()
     }
-    
-    func listAt(index: Int) -> CourseList? {
-        guard index >= 0 && index < numberOfLists else {
-            return nil
-        }
-        return courseLists[index]
+}
+
+extension CourseListModel {
+    func course(at index: Int) -> Course? {
+        return courseList.element(at: index)
     }
-    
+}
+
+
+extension CourseListModel: CourseUpsertModelDelegate {
+    func save(course: Course) {
+        courseList.append(course)
+        delegate.dataRefreshed()
+    }
 }

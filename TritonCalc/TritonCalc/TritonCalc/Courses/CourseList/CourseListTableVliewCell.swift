@@ -14,10 +14,15 @@ final class CourseListTableViewCell : UITableViewCell {
     func forCourse(_ course: Course) {
         self.course = course
         
-        self.nameLabel.text = course.name
-        self.creditHours.text = "\(course.creditHours)"
-        self.letterGrade.text = String(format: "%.1f %s", course.grade.rawValue.pointValue, course.grade.rawValue.letter)
-        self.points.text = String(format: "%.1f", course.points)
+        nameLabel.text = course.name
+        creditHours.text = "\(course.creditHours)"
+        points.text = course.points.asString()
+        
+        guard let grade = course.grade?.rawValue else {
+                return
+        }
+        
+        self.letterGrade.text = String(format: "%g", grade.pointValue)
     }
     
 }
