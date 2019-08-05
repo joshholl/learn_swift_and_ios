@@ -39,6 +39,11 @@ extension CourseListModel {
     func course(at index: Int) -> Course? {
         return courseList.element(at: index)
     }
+    
+    func deleteCourse(at index: Int) {
+        courseList.remove(at: index)
+        delegate.dataRefreshed()
+    }
 }
 
 

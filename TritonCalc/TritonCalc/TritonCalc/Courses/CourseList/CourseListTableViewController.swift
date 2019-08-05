@@ -67,17 +67,18 @@ extension CourseListTableViewController: UITableViewDelegate {
         performSegue(withIdentifier: "showUpsert", sender: cell.course)
     }
     
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        switch editingStyle {
-//        case .delete:
-//            let cell = tableView.cellForRow(at: indexPath) as! CourseListTableViewCell
-//
-//            self.present(createAlertForDeleteWorkout(named: cell.workout.name, handler: { (_) in
-//                self.model.deleteWorkout(workout: cell.workout)
-//            }), animated: true)
-//
-//        default:
-//            break
-//        }
-//    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        switch editingStyle {
+        case .delete:
+            let cell = tableView.cellForRow(at: indexPath) as! CourseListTableViewCell
+
+            let alertController = UIAlertController(title: "Delete Course \(cell.course.name)?", message: "Confirm", preferredStyle: .alert)
+            alertController.addAction( UIAlertAction(title: "Yes", style: .default, handler:
+                { (_) in self.model.deleteCourse(at: indexPath.row) }))
+            alertController.addAction( UIAlertAction(title: "Cancel", style: .cancel ))
+            self.present(alertController, animated: true)
+        default:
+            break
+        }
+    }
 }
