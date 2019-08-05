@@ -27,6 +27,8 @@ final class CourseUpsertModel {
         self.course = course ?? Course.default
         letterGrades = ["None"]
         letterGrades.append(contentsOf: LetterGrade.allCases.map({$0.rawValue.letter}))
+        
+        
         self.delegate = delegate
     }
 }
@@ -36,6 +38,7 @@ extension CourseUpsertModel {
         
         // init of the rawValue with a string thats isn't mapped will return nil, thats ok here
         let letterGrade = LetterGrade.init(rawValue: Grade(letter: grade, pointValue: 0))
+        
         delegate?.save(course: Course(name: name, creditHours: hours, grade: letterGrade))
     }
 }

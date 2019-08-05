@@ -32,6 +32,7 @@ extension CourseUpsertViewController   {
         creditHourStepper.maximumValue = model.maxCourseHoursStepper
         creditHourStepper.value = Double(model.course.creditHours)
         creditHourStepper.stepValue = model.courseHoursStepperSize
+        creditHourStepperLabel.text = "\(Int(creditHourStepper.value))"
         
         // Grade Picker
         projectedGradePicker = UIPickerView()

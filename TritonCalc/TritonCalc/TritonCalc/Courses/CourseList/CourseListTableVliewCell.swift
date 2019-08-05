@@ -15,14 +15,14 @@ final class CourseListTableViewCell : UITableViewCell {
         self.course = course
         
         nameLabel.text = course.name
-        creditHours.text = "\(course.creditHours)"
+        creditHours.text = course.creditHours.hoursString()
         points.text = course.points.asString()
         
         guard let grade = course.grade?.rawValue else {
                 return
         }
         
-        self.letterGrade.text = String(format: "%g", grade.pointValue)
+        self.letterGrade.text = grade.letter
     }
     
 }

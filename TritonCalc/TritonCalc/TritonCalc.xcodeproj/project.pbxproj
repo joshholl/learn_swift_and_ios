@@ -30,6 +30,8 @@
 		FDD955F922F79C02003D4625 /* CourseUpsertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD955F822F79C02003D4625 /* CourseUpsertViewController.swift */; };
 		FDE5949222F7C87D0075D2D3 /* CourseUpsertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE5949122F7C87D0075D2D3 /* CourseUpsertModel.swift */; };
 		FDE5949422F7D57B0075D2D3 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE5949322F7D57B0075D2D3 /* Array.swift */; };
+		FDE5949622F7E31A0075D2D3 /* LetterGrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE5949522F7E31A0075D2D3 /* LetterGrade.swift */; };
+		FDE5949822F7E4FA0075D2D3 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE5949722F7E4FA0075D2D3 /* Int.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 		FDD955F822F79C02003D4625 /* CourseUpsertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseUpsertViewController.swift; sourceTree = "<group>"; };
 		FDE5949122F7C87D0075D2D3 /* CourseUpsertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseUpsertModel.swift; sourceTree = "<group>"; };
 		FDE5949322F7D57B0075D2D3 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
+		FDE5949522F7E31A0075D2D3 /* LetterGrade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterGrade.swift; sourceTree = "<group>"; };
+		FDE5949722F7E4FA0075D2D3 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 				FD522DB022F3D9540026FE69 /* ViewController.swift */,
 				FDD955E622F76328003D4625 /* Main.storyboard */,
 				FDD955EB22F764DB003D4625 /* GradePointAverage.swift */,
+				FDE5949522F7E31A0075D2D3 /* LetterGrade.swift */,
 			);
 			path = TritonCalc;
 			sourceTree = "<group>";
@@ -170,6 +175,7 @@
 			children = (
 				FDD955F422F77DBE003D4625 /* Double.swift */,
 				FDE5949322F7D57B0075D2D3 /* Array.swift */,
+				FDE5949722F7E4FA0075D2D3 /* Int.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -256,6 +262,7 @@
 				FD522DB122F3D9540026FE69 /* ViewController.swift in Sources */,
 				FD522DC922F3E84B0026FE69 /* CourseListTableVliewCell.swift in Sources */,
 				FDE5949222F7C87D0075D2D3 /* CourseUpsertModel.swift in Sources */,
+				FDE5949622F7E31A0075D2D3 /* LetterGrade.swift in Sources */,
 				FDD955E322F72E62003D4625 /* CurrentGpaViewController.swift in Sources */,
 				FD522DAF22F3D9540026FE69 /* AppDelegate.swift in Sources */,
 				FD0C928E22F60D0A00BCB7AB /* CourseListTableViewController.swift in Sources */,
@@ -265,6 +272,7 @@
 				FD0C929022F615A500BCB7AB /* CourseListModel.swift in Sources */,
 				FDD955EC22F764DB003D4625 /* GradePointAverage.swift in Sources */,
 				FD522DC222F3D9FD0026FE69 /* Course.swift in Sources */,
+				FDE5949822F7E4FA0075D2D3 /* Int.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
