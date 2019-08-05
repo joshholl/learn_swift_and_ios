@@ -11,7 +11,7 @@ import UIKit
 
 class CurrentGpaViewController: UIViewController {
     private var model: GradePointAverage?
-    private var updateDelegate: ActualizedGpaUpdateDelegate?
+    private var updateDelegate: GpaOverviewDelegate?
     
     @IBOutlet private weak var numberOfHours: UITextField!
     @IBOutlet private weak var gpa: UITextField!
@@ -67,7 +67,7 @@ extension CurrentGpaViewController: UITextFieldDelegate {
 }
 
 extension CurrentGpaViewController {
-    func prepare(model: GradePointAverage, delegate: ActualizedGpaUpdateDelegate) {
+    func prepare(model: GradePointAverage, delegate: GpaOverviewDelegate) {
         self.model = model
         self.updateDelegate = delegate
     }

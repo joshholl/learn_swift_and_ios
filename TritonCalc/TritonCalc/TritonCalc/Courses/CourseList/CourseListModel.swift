@@ -16,6 +16,15 @@ extension CourseList {
     var totalHours: Int {
         return self.reduce(0, { sum, next in sum + next.creditHours })
     }
+    
+    var gpa: GradePointAverage {
+        get {
+        let applicableCourses = self.filter{$0.grade != nil}
+        
+        return GradePointAverage(hours: applicableCourses.reduce(0, {sum, next in sum + next.creditHours}),
+                                 pointsEarned: applicableCourses.reduce(0, {sum, next in sum + next.points}))
+        }
+    }
 }
 
 protocol CourseListModelDelegate {
@@ -24,14 +33,18 @@ protocol CourseListModelDelegate {
 
 
 final class CourseListModel {
+    private let persistence: GpaPersistable
     private var courseList: CourseList
     private var delegate: CourseListModelDelegate
+    
+    
     var count: Int { return courseList.count }
     let rowHeight: Double = 64.0
     
     init(delegate: CourseListModelDelegate) {
         self.delegate = delegate
-        self.courseList = CourseList()
+        self.persistence = ApplicationSession.sharedInstance.persistence
+        self.courseList = persistence.courseProjections
     }
 }
 
@@ -41,7 +54,12 @@ extension CourseListModel {
     }
     
     func deleteCourse(at index: Int) {
-        courseList.remove(at: index)
+        guard let course = courseList.element(at: index) else {
+            return
+        }
+
+        persistence.remove(course: course)
+        courseList = persistence.courseProjections
         delegate.dataRefreshed()
     }
 }
@@ -50,6 +68,7 @@ extension CourseListModel {
 extension CourseListModel: CourseUpsertModelDelegate {
     func save(course: Course) {
         courseList.append(course)
+        persistence.save(course: course)
         delegate.dataRefreshed()
     }
 }

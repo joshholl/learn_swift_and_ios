@@ -13,13 +13,13 @@ final class CourseListTableViewController: UIViewController {
     private var model: CourseListModel!
 }
 
+
 extension CourseListTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         model = CourseListModel(delegate: self)
     }
 }
-
 
 extension CourseListTableViewController: CourseListModelDelegate {
     func dataRefreshed() {

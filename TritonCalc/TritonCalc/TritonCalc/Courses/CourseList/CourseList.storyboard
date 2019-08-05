@@ -104,7 +104,6 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
                     <navigationItem key="navigationItem" title="Course List" leftItemsSupplementBackButton="YES" id="sYX-Uu-E2d">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="e1c-QX-Sln"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="j0f-aK-Y9s">
                             <color key="tintColor" name="UmslLightestGray"/>
                             <connections>

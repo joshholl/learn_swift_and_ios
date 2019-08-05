@@ -188,7 +188,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="organize" id="5vv-Zg-Xtq">
                             <color key="tintColor" name="UmslLightestGray"/>
                             <connections>
-                                <segue destination="5gi-FO-Vwh" kind="show" id="ShM-Fy-Gak"/>
+                                <segue destination="5gi-FO-Vwh" kind="show" identifier="overviewToCourseList" id="ShM-Fy-Gak"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

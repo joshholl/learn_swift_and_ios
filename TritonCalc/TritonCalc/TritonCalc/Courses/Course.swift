@@ -7,10 +7,12 @@ public struct Course {
     let creditHours: Int
     let grade: LetterGrade?
     var points: Double {
+        get {
         guard let pointValue = grade?.rawValue.pointValue else {
             return 0
         }
         return Double(creditHours) * pointValue
+        }
     }
 }
 

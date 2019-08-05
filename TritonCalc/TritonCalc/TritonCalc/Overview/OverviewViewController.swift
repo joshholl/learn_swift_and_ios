@@ -24,13 +24,7 @@ class OverviewViewController: UIViewController {
 extension OverviewViewController {
     override func viewDidLoad() {
         model = GpaOverviewModel()
-        
-        actualHoursCompleted.text = "\(model.actualizedGPA.hours)"
-        actualPointsEarned.text = model.actualizedGPA.pointsEarned.asString()
-        actualGPA.text = model.actualizedGPA.average.asString()
-        projectedHoursCompleted.text = "\(model.projectedGPA.hours)"
-        projectedPointsEarned.text = model.projectedGPA.pointsEarned.asString()
-        projectedGPA.text = model.projectedGPA.average.asString()
+        refresh()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -39,16 +33,31 @@ extension OverviewViewController {
                 return
             }
             target.prepare(model: model.actualizedGPA, delegate: self)
-        }
+        } 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        refresh()
+    }
+    
 }
 
-extension OverviewViewController: ActualizedGpaUpdateDelegate {
-    func update(to newAverage: GradePointAverage) {
-        model.update(actualized: newAverage)
-        
+extension OverviewViewController: Refreshable {
+    func refresh() {
+        model.refresh()
         actualHoursCompleted.text = "\(model.actualizedGPA.hours)"
         actualPointsEarned.text = model.actualizedGPA.pointsEarned.asString()
         actualGPA.text = model.actualizedGPA.average.asString()
+        projectedHoursCompleted.text = "\(model.projectedGPA.hours)"
+        projectedPointsEarned.text = model.projectedGPA.pointsEarned.asString()
+        projectedGPA.text = model.projectedGPA.average.asString()
+    }
+}
+
+
+
+extension OverviewViewController: GpaOverviewDelegate {
+    func update(to newAverage: GradePointAverage) {
+        model.update(actualized: newAverage)
     }
 }
