@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol Refreshable {
-    func refresh() -> ()
+protocol ModelRefreshDelegate: class {
+    func refresh()
 }

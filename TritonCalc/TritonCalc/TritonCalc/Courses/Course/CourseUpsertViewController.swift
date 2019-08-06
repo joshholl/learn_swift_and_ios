@@ -7,7 +7,8 @@ class CourseUpsertViewController: UIViewController {
     @IBOutlet weak var creditHourStepper: UIStepper!
     @IBOutlet weak var creditHourStepperLabel: UILabel!
     @IBOutlet weak var projectedGradeTextField: UITextField!
-
+    @IBOutlet weak var isSubstituteSwitch: UISwitch!
+    
     private var projectedGradePicker: UIPickerView!
     private var model: CourseUpsertModel!
 }
@@ -17,12 +18,12 @@ extension CourseUpsertViewController   {
     override func viewDidLoad() {
         // MARK: Course Name
         courseNameTextField.delegate = self
-        courseNameTextField.text = model.course.name
+        courseNameTextField.text = model.course?.name
         
         // MARK: Credit Hour Stepper
         creditHourStepper.minimumValue = model.minCourseHoursStepper
         creditHourStepper.maximumValue = model.maxCourseHoursStepper
-        creditHourStepper.value = Double(model.course.creditHours)
+        creditHourStepper.value = Double(model.course?.creditHours ?? 3)
         creditHourStepper.stepValue = model.courseHoursStepperSize
         creditHourStepperLabel.text = "\(Int(creditHourStepper.value))"
         
@@ -31,6 +32,15 @@ extension CourseUpsertViewController   {
         projectedGradePicker.delegate = self
         projectedGradePicker.dataSource = self
         projectedGradeTextField.inputView = projectedGradePicker
+            let row = model!.selectedLetterGradeIndex()
+       
+        projectedGradePicker.selectRow(row, inComponent: 0, animated: true)
+        pickerView(projectedGradePicker, didSelectRow: row, inComponent: 0)
+
+        
+        //MARK: Substitute Switch Setup
+        isSubstituteSwitch.isOn = model.course?.isSubstitue ?? false
+        isSubstituteSwitch.isEnabled = model.course?.grade != nil
     }
 }
 
@@ -50,7 +60,8 @@ extension CourseUpsertViewController {
     @IBAction private func addCourseTapped(_ sender: UIButton) {
        model.save(name: courseNameTextField.text ?? "",
                   hours: Int(creditHourStepper.value),
-                  grade: projectedGradeTextField.text ?? "")
+                  grade: projectedGradeTextField.text ?? "",
+                    isSubstitue: isSubstituteSwitch.isOn)
         
         navigationController?.popViewController(animated: true)
     }
@@ -75,7 +86,9 @@ extension CourseUpsertViewController: UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        projectedGradeTextField.text = model.letterGrades[row]
+        let letterGradeText = model.letterGrades[row]
+        projectedGradeTextField.text = letterGradeText
+        isSubstituteSwitch.isEnabled = letterGradeText != "NONE"
         self.view.endEditing(true)
     }
 }

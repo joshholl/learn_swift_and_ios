@@ -13,7 +13,6 @@
 		FD522DAF22F3D9540026FE69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD522DAE22F3D9540026FE69 /* AppDelegate.swift */; };
 		FD522DB622F3D9550026FE69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD522DB522F3D9550026FE69 /* Assets.xcassets */; };
 		FD522DB922F3D9550026FE69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD522DB722F3D9550026FE69 /* LaunchScreen.storyboard */; };
-		FD522DC222F3D9FD0026FE69 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD522DC122F3D9FD0026FE69 /* Course.swift */; };
 		FD522DC922F3E84B0026FE69 /* CourseListTableVliewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD522DC822F3E84B0026FE69 /* CourseListTableVliewCell.swift */; };
 		FDD955DF22F72D7E003D4625 /* mascot.png in Resources */ = {isa = PBXBuildFile; fileRef = FDD955DE22F72D7E003D4625 /* mascot.png */; };
 		FDD955E122F72E38003D4625 /* CurrentGpa.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD955E022F72E38003D4625 /* CurrentGpa.storyboard */; };
@@ -30,10 +29,13 @@
 		FDE5949222F7C87D0075D2D3 /* CourseUpsertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE5949122F7C87D0075D2D3 /* CourseUpsertModel.swift */; };
 		FDE5949422F7D57B0075D2D3 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE5949322F7D57B0075D2D3 /* Array.swift */; };
 		FDE5949622F7E31A0075D2D3 /* LetterGrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE5949522F7E31A0075D2D3 /* LetterGrade.swift */; };
-		FDE5949822F7E4FA0075D2D3 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE5949722F7E4FA0075D2D3 /* Int.swift */; };
-		FDE5949C22F7F1410075D2D3 /* Refreshable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE5949B22F7F1410075D2D3 /* Refreshable.swift */; };
-		FDE594A122F7F3EF0075D2D3 /* ApplicationSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE594A022F7F3EF0075D2D3 /* ApplicationSession.swift */; };
-		FDE594A422F7F45C0075D2D3 /* GpaPersistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE594A322F7F45C0075D2D3 /* GpaPersistance.swift */; };
+		FDE5949C22F7F1410075D2D3 /* ModelRefreshDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE5949B22F7F1410075D2D3 /* ModelRefreshDelegate.swift */; };
+		FDE594CA22F9450C0075D2D3 /* CourseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE594C922F9450C0075D2D3 /* CourseList.swift */; };
+		FDE594CC22F950B70075D2D3 /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE594CB22F950B70075D2D3 /* Either.swift */; };
+		FDE594D522FA615F0075D2D3 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE594D422FA615F0075D2D3 /* Log.swift */; };
+		FDE594D722FA66CE0075D2D3 /* TritonCalcPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE594D622FA66CE0075D2D3 /* TritonCalcPersistence.swift */; };
+		FDE594D922FA67E70075D2D3 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE594D822FA67E70075D2D3 /* Course.swift */; };
+		FDE594DC22FA6A790075D2D3 /* TritonCalc.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FDE594DA22FA6A790075D2D3 /* TritonCalc.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +47,6 @@
 		FD522DB522F3D9550026FE69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD522DB822F3D9550026FE69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD522DBA22F3D9550026FE69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FD522DC122F3D9FD0026FE69 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		FD522DC822F3E84B0026FE69 /* CourseListTableVliewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListTableVliewCell.swift; sourceTree = "<group>"; };
 		FDD955DE22F72D7E003D4625 /* mascot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mascot.png; sourceTree = "<group>"; };
 		FDD955E022F72E38003D4625 /* CurrentGpa.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CurrentGpa.storyboard; sourceTree = "<group>"; };
@@ -62,10 +63,13 @@
 		FDE5949122F7C87D0075D2D3 /* CourseUpsertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseUpsertModel.swift; sourceTree = "<group>"; };
 		FDE5949322F7D57B0075D2D3 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		FDE5949522F7E31A0075D2D3 /* LetterGrade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterGrade.swift; sourceTree = "<group>"; };
-		FDE5949722F7E4FA0075D2D3 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
-		FDE5949B22F7F1410075D2D3 /* Refreshable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Refreshable.swift; sourceTree = "<group>"; };
-		FDE594A022F7F3EF0075D2D3 /* ApplicationSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationSession.swift; sourceTree = "<group>"; };
-		FDE594A322F7F45C0075D2D3 /* GpaPersistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GpaPersistance.swift; sourceTree = "<group>"; };
+		FDE5949B22F7F1410075D2D3 /* ModelRefreshDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelRefreshDelegate.swift; sourceTree = "<group>"; };
+		FDE594C922F9450C0075D2D3 /* CourseList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseList.swift; sourceTree = "<group>"; };
+		FDE594CB22F950B70075D2D3 /* Either.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Either.swift; sourceTree = "<group>"; };
+		FDE594D422FA615F0075D2D3 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		FDE594D622FA66CE0075D2D3 /* TritonCalcPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TritonCalcPersistence.swift; sourceTree = "<group>"; };
+		FDE594D822FA67E70075D2D3 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		FDE594DB22FA6A790075D2D3 /* TritonCalc.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TritonCalc.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,7 @@
 		FD522DAD22F3D9540026FE69 /* TritonCalc */ = {
 			isa = PBXGroup;
 			children = (
+				FDE594D122FA5BD30075D2D3 /* Shared */,
 				FDE5949E22F7F38F0075D2D3 /* Session */,
 				FDD955F322F77DA1003D4625 /* Extensions */,
 				FDD955E822F763ED003D4625 /* Overview */,
@@ -105,9 +110,6 @@
 				FD522DC322F3E5F50026FE69 /* Courses */,
 				FD522DC022F3D9CA0026FE69 /* Supporting Files */,
 				FDD955E622F76328003D4625 /* Main.storyboard */,
-				FDD955EB22F764DB003D4625 /* GradePointAverage.swift */,
-				FDE5949522F7E31A0075D2D3 /* LetterGrade.swift */,
-				FDE5949B22F7F1410075D2D3 /* Refreshable.swift */,
 			);
 			path = TritonCalc;
 			sourceTree = "<group>";
@@ -127,7 +129,6 @@
 		FD522DC322F3E5F50026FE69 /* Courses */ = {
 			isa = PBXGroup;
 			children = (
-				FD522DC122F3D9FD0026FE69 /* Course.swift */,
 				FD522DC522F3E6310026FE69 /* Course */,
 				FD522DC422F3E6210026FE69 /* CourseList */,
 			);
@@ -179,7 +180,7 @@
 			children = (
 				FDD955F422F77DBE003D4625 /* Double.swift */,
 				FDE5949322F7D57B0075D2D3 /* Array.swift */,
-				FDE5949722F7E4FA0075D2D3 /* Int.swift */,
+				FDE594C922F9450C0075D2D3 /* CourseList.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -187,7 +188,6 @@
 		FDE5949E22F7F38F0075D2D3 /* Session */ = {
 			isa = PBXGroup;
 			children = (
-				FDE594A222F7F4240075D2D3 /* GPA Persistence */,
 				FDE5949F22F7F3C10075D2D3 /* Main */,
 			);
 			name = Session;
@@ -196,18 +196,24 @@
 		FDE5949F22F7F3C10075D2D3 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				FDE594DA22FA6A790075D2D3 /* TritonCalc.xcdatamodeld */,
 				FD522DAE22F3D9540026FE69 /* AppDelegate.swift */,
-				FDE594A022F7F3EF0075D2D3 /* ApplicationSession.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
 		};
-		FDE594A222F7F4240075D2D3 /* GPA Persistence */ = {
+		FDE594D122FA5BD30075D2D3 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				FDE594A322F7F45C0075D2D3 /* GpaPersistance.swift */,
+				FDE5949522F7E31A0075D2D3 /* LetterGrade.swift */,
+				FDE5949B22F7F1410075D2D3 /* ModelRefreshDelegate.swift */,
+				FDE594CB22F950B70075D2D3 /* Either.swift */,
+				FDD955EB22F764DB003D4625 /* GradePointAverage.swift */,
+				FDE594D422FA615F0075D2D3 /* Log.swift */,
+				FDE594D622FA66CE0075D2D3 /* TritonCalcPersistence.swift */,
+				FDE594D822FA67E70075D2D3 /* Course.swift */,
 			);
-			path = "GPA Persistence";
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,23 +294,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDD955EA22F76490003D4625 /* GpaOverviewModel.swift in Sources */,
+				FDE594D522FA615F0075D2D3 /* Log.swift in Sources */,
 				FDD955EE22F76750003D4625 /* OverviewViewController.swift in Sources */,
 				FD522DC922F3E84B0026FE69 /* CourseListTableVliewCell.swift in Sources */,
-				FDE594A422F7F45C0075D2D3 /* GpaPersistance.swift in Sources */,
 				FDE5949222F7C87D0075D2D3 /* CourseUpsertModel.swift in Sources */,
 				FDE5949622F7E31A0075D2D3 /* LetterGrade.swift in Sources */,
 				FDD955E322F72E62003D4625 /* CurrentGpaViewController.swift in Sources */,
+				FDE594D722FA66CE0075D2D3 /* TritonCalcPersistence.swift in Sources */,
+				FDE594CC22F950B70075D2D3 /* Either.swift in Sources */,
 				FD522DAF22F3D9540026FE69 /* AppDelegate.swift in Sources */,
 				FD0C928E22F60D0A00BCB7AB /* CourseListTableViewController.swift in Sources */,
-				FDE5949C22F7F1410075D2D3 /* Refreshable.swift in Sources */,
-				FDE594A122F7F3EF0075D2D3 /* ApplicationSession.swift in Sources */,
+				FDE5949C22F7F1410075D2D3 /* ModelRefreshDelegate.swift in Sources */,
 				FDD955F522F77DBE003D4625 /* Double.swift in Sources */,
+				FDE594DC22FA6A790075D2D3 /* TritonCalc.xcdatamodeld in Sources */,
 				FDE5949422F7D57B0075D2D3 /* Array.swift in Sources */,
 				FDD955F922F79C02003D4625 /* CourseUpsertViewController.swift in Sources */,
 				FD0C929022F615A500BCB7AB /* CourseListModel.swift in Sources */,
+				FDE594CA22F9450C0075D2D3 /* CourseList.swift in Sources */,
 				FDD955EC22F764DB003D4625 /* GradePointAverage.swift in Sources */,
-				FD522DC222F3D9FD0026FE69 /* Course.swift in Sources */,
-				FDE5949822F7E4FA0075D2D3 /* Int.swift in Sources */,
+				FDE594D922FA67E70075D2D3 /* Course.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,6 +504,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FDE594DA22FA6A790075D2D3 /* TritonCalc.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FDE594DB22FA6A790075D2D3 /* TritonCalc.xcdatamodel */,
+			);
+			currentVersion = FDE594DB22FA6A790075D2D3 /* TritonCalc.xcdatamodel */;
+			path = TritonCalc.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FD522DA322F3D9540026FE69 /* Project object */;
 }

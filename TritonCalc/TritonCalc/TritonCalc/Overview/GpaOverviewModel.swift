@@ -1,35 +1,43 @@
-//
-//  OverviewModel.swift
-//  TritonCalc
-//
-//  Created by Josh Hollandsworth on 8/4/19.
-//  Copyright © 2019 Joshholl. All rights reserved.
-//
-
 import Foundation
-
+import CoreData
 
 protocol GpaOverviewDelegate: class {
     func update(to: GradePointAverage)
-    func refresh()
 }
 
 class GpaOverviewModel {
-    private let persistence: GpaPersistable
-    private(set) var actualizedGPA : GradePointAverage;
-    private(set) var projectedGPA: GradePointAverage;
-    init() {
-        self.persistence = ApplicationSession.sharedInstance.persistence
-        self.actualizedGPA = persistence.actualizedGpa
-        self.projectedGPA = persistence.courseProjections.gpa
+
+    private weak var delegate: ModelRefreshDelegate?
+    private var persistence: TritonCalcPersistence
+    private var courses: CourseList
+    private(set) var currentGpa: GradePointAverage
+    var projectedGpa: GradePointAverage {
+        return courses.gpa
+    }
+    
+    init(persistence: TritonCalcPersistence, delegate: ModelRefreshDelegate) {
+        self.persistence = persistence;
+        self.delegate = delegate
+        
+        self.courses = self.persistence.coureses
+        self.currentGpa = self.persistence.currentGpa
     }
     
     func update(actualized: GradePointAverage) {
-        persistence.save(gpa: actualized)
+        self.persistence.save(gpa: actualized)
+        self.delegate?.refresh()
     }
     
-    func refresh() {
-        self.actualizedGPA = persistence.actualizedGpa
-        self.projectedGPA = persistence.courseProjections.gpa
-    }
+//    func refresh() {
+//        let fetchCourseList = NSFetchRequest<Course>(entityName: "Course")
+//        self.courses = try! context.fetch(fetchCourseList)
+//
+//        let fetchCurrentGpa = NSFetchRequest<CurrentGpa>(entityName: "CurrentGpa")
+//        guard let gpa = try! context.fetch(fetchCurrentGpa).first else {
+//            self.currentGpa = CurrentGpa(context: self.context)
+//            try! context.save()
+//            return
+//        }
+//        self.currentGpa = gpa
+//    }
 }

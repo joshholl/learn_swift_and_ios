@@ -10,6 +10,6 @@ import Foundation
 
 extension Double {
     func asString() -> String {
-        return String(format: "%g", self)
+        return String(format: "%.3g", self)
     }
 }

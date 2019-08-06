@@ -3,26 +3,28 @@ import UIKit
 
 final class CourseListTableViewCell : UITableViewCell {
     
-    @IBOutlet private weak var nameLabel: UILabel!
-    @IBOutlet private weak var creditHours: UILabel!
-    @IBOutlet private weak var letterGrade: UILabel!
-    @IBOutlet private weak var points: UILabel!
-    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var creditHoursLabel: UILabel!
+    @IBOutlet weak var letterGradeLabel: UILabel!
+    @IBOutlet weak var gradePointsLabel: UILabel!
     
     private(set) var course: Course!
+    
+    private var hoursString: String {
+        return self.course.creditHours == 1 ? "\(course.creditHours) Hour" : "\(course.creditHours) Hours"
+    }
+    
+    private var displayableLetterGrade: String {
+        return self.course.grade?.rawValue.letter ?? "None"
+    }
     
     func forCourse(_ course: Course) {
         self.course = course
         
-        nameLabel.text = course.name
-        creditHours.text = course.creditHours.hoursString()
-        points.text = course.points.asString()
-        
-        guard let grade = course.grade?.rawValue else {
-                return
-        }
-        
-        self.letterGrade.text = grade.letter
+        nameLabel.text = self.course.name
+        creditHoursLabel.text = hoursString
+        gradePointsLabel.text = self.course.points.asString()
+        letterGradeLabel.text = displayableLetterGrade
+
     }
-    
 }

@@ -36,16 +36,16 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="MJ4-4x-Blj" userLabel="CourseInfo">
                                                             <rect key="frame" x="0.0" y="0.0" width="151.5" height="42"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STU-47-qoq">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="42" height="18.5"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STU-47-qoq">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="18.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <nil key="textColor"/>
+                                                                    <color key="textColor" name="UmslLightGray"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjt-ZW-m5d">
                                                                     <rect key="frame" x="0.0" y="23.5" width="42" height="18.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <nil key="textColor"/>
+                                                                    <color key="textColor" name="UmslLightGray"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
@@ -56,13 +56,13 @@
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oO6-gB-gtJ">
                                                                     <rect key="frame" x="109.5" y="0.0" width="42" height="18.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <nil key="textColor"/>
+                                                                    <color key="textColor" name="UmslLightGray"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hw-Wd-jUG">
                                                                     <rect key="frame" x="109.5" y="23.5" width="42" height="18.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <nil key="textColor"/>
+                                                                    <color key="textColor" name="UmslLightGray"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
@@ -80,10 +80,10 @@
                                         <color key="backgroundColor" name="UmslRed"/>
                                         <color key="tintColor" name="UmslLightGray"/>
                                         <connections>
-                                            <outlet property="creditHours" destination="fjt-ZW-m5d" id="8FO-Ia-8YM"/>
-                                            <outlet property="letterGrade" destination="oO6-gB-gtJ" id="UXJ-xC-rb6"/>
-                                            <outlet property="nameLabel" destination="STU-47-qoq" id="Ezg-Ii-gv5"/>
-                                            <outlet property="points" destination="3hw-Wd-jUG" id="LDc-0Y-QOc"/>
+                                            <outlet property="creditHoursLabel" destination="fjt-ZW-m5d" id="gjl-e2-HdK"/>
+                                            <outlet property="gradePointsLabel" destination="3hw-Wd-jUG" id="gtk-mW-RfZ"/>
+                                            <outlet property="letterGradeLabel" destination="oO6-gB-gtJ" id="Ynw-wE-wUB"/>
+                                            <outlet property="nameLabel" destination="STU-47-qoq" id="9ze-5p-miF"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

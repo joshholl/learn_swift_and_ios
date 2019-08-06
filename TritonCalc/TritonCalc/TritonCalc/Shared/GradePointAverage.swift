@@ -34,6 +34,18 @@ extension GradePointAverage {
     static var `default` : GradePointAverage {
         return GradePointAverage(hours: 0, pointsEarned: 0 )
     }
-    
+}
 
+extension GradePointAverage {
+    static func from(_ entity: CurrentGpaEntity? ) -> GradePointAverage {
+        
+        guard let safeEntity = entity else {
+            return GradePointAverage.default
+        }
+        
+        let hours = Int(safeEntity.hours)
+        let points = safeEntity.pointsEarned
+        
+        return GradePointAverage(hours: hours, pointsEarned: points)
+    }
 }

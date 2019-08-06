@@ -55,3 +55,12 @@ enum LetterGrade: RawRepresentable, CaseIterable {
     }
     
 }
+
+extension LetterGrade {
+    static func from(string: String?) -> LetterGrade? {
+        guard let gradeString = string else {
+            return nil
+        }
+        return LetterGrade.init(rawValue: Grade(letter: gradeString, pointValue: 0))
+    }
+}

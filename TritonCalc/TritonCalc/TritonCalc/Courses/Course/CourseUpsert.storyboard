@@ -81,8 +81,22 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Ji4-qT-Hp5">
+                                        <rect key="frame" x="0.0" y="121.5" width="337.5" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Substitutes Grade" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYm-qM-eRe">
+                                                <rect key="frame" x="0.0" y="0.0" width="268.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" name="UmslLightGray"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fF4-Tj-Xzc">
+                                                <rect key="frame" x="288.5" y="0.0" width="51" height="20.5"/>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bf6-sm-rm9">
-                                        <rect key="frame" x="0.0" y="121.5" width="337.5" height="30"/>
+                                        <rect key="frame" x="0.0" y="162" width="337.5" height="30"/>
                                         <state key="normal" title="Add Course">
                                             <color key="titleColor" name="UmslYellow"/>
                                         </state>
@@ -91,7 +105,7 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Qs-Ez-637">
-                                        <rect key="frame" x="0.0" y="171.5" width="337.5" height="228.5"/>
+                                        <rect key="frame" x="0.0" y="212" width="337.5" height="188"/>
                                         <color key="backgroundColor" name="UmslRed"/>
                                     </view>
                                 </subviews>
@@ -110,6 +124,7 @@
                         <outlet property="courseNameTextField" destination="Nhg-yo-B8g" id="uZk-jH-mYo"/>
                         <outlet property="creditHourStepper" destination="dQk-lP-ahN" id="CUZ-YP-1Nq"/>
                         <outlet property="creditHourStepperLabel" destination="AVR-DL-1VG" id="Cay-Xm-6m3"/>
+                        <outlet property="isSubstituteSwitch" destination="fF4-Tj-Xzc" id="ljr-lZ-bZ4"/>
                         <outlet property="projectedGradeTextField" destination="73H-qv-CAf" id="vDH-Oe-vHS"/>
                     </connections>
                 </viewController>

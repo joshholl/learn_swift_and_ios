@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+
 final class CourseListTableViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     private var model: CourseListModel!
@@ -17,22 +18,21 @@ final class CourseListTableViewController: UIViewController {
 extension CourseListTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        model = CourseListModel(delegate: self)
+        model = CourseListModel(persistence: TritonCalcPersistence(), delegate: self)
     }
 }
 
-extension CourseListTableViewController: CourseListModelDelegate {
-    func dataRefreshed() {
+extension CourseListTableViewController: ModelRefreshDelegate{
+    func refresh() {
         tableView.reloadData()
     }
-    
-    
 }
 extension CourseListTableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let upsertController = segue.destination as? CourseUpsertViewController {
             let course = sender as? Course
-            let courseModel = CourseUpsertModel(course: course, delegate: model)
+            
+            let courseModel = CourseUpsertModel(course: course, persistence: TritonCalcPersistence() , delegate: self)
             upsertController.for(model: courseModel)
         }
     }
@@ -46,10 +46,8 @@ extension CourseListTableViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CourseCell", for: indexPath) as! CourseListTableViewCell
-        
         let course = model.course(at: indexPath.row)!
         cell.forCourse(course)
-        
         return cell
     }
     
@@ -82,3 +80,4 @@ extension CourseListTableViewController: UITableViewDelegate {
         }
     }
 }
+

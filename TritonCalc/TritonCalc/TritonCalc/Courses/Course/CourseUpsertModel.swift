@@ -1,45 +1,43 @@
-//
-//  CourseUpsertModel.swift
-//  TritonCalc
-//
-//  Created by Josh Hollandsworth on 8/4/19.
-//  Copyright © 2019 Joshholl. All rights reserved.
-//
-
 import Foundation
-
-protocol CourseUpsertModelDelegate: class {
-    func save(course: Course)
-}
 
 final class CourseUpsertModel {
     
-    private(set) var course: Course
-    private weak var delegate: CourseUpsertModelDelegate?
+    private(set) var course: Course?
+    private var persistence: TritonCalcPersistence
+    private weak var delegate: ModelRefreshDelegate?
     
     let minCourseHoursStepper: Double = 1
     let maxCourseHoursStepper: Double = 5
     let courseHoursStepperSize: Double = 1
+    let noneGradeValue: String = "None"
     private(set) var letterGrades: [String]
     
-    
-    init(course: Course?, delegate: CourseUpsertModelDelegate) {
-        self.course = course ?? Course.default
-        letterGrades = ["None"]
-        letterGrades.append(contentsOf: LetterGrade.allCases.map({$0.rawValue.letter}))
-        
-        
+    init(course: Course?, persistence: TritonCalcPersistence, delegate: ModelRefreshDelegate) {
         self.delegate = delegate
+        self.persistence = persistence
+    
+        letterGrades = [noneGradeValue]
+        letterGrades.append(contentsOf: LetterGrade.allCases.map({$0.rawValue.letter}))
+        self.course = course
     }
 }
 
 extension CourseUpsertModel {
-    func save(name: String, hours: Int, grade: String) {
+    func save(name: String, hours: Int, grade: String, isSubstitue: Bool = false) {
         
-        // init of the rawValue with a string thats isn't mapped will return nil, thats ok here
-        let letterGrade = LetterGrade.init(rawValue: Grade(letter: grade, pointValue: 0))
+        let id = course?.id ?? UUID()
+        let grade = LetterGrade.from(string: grade)
+        let updatedCourse = Course(id: id, name: name, creditHours: hours, isSubstitue: isSubstitue, grade: grade)
         
-        delegate?.save(course: Course(name: name, creditHours: hours, grade: letterGrade))
+        self.persistence.save(course: updatedCourse)
+    }
+    
+    func selectedLetterGradeIndex() -> Int{
+        guard let grade = self.course?.grade?.rawValue.letter else {
+            return self.letterGrades.firstIndex(of: noneGradeValue)!
+        }
+
+        return self.letterGrades.firstIndex(of: grade)!
     }
 }
 

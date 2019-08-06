@@ -23,7 +23,7 @@ class OverviewViewController: UIViewController {
 
 extension OverviewViewController {
     override func viewDidLoad() {
-        model = GpaOverviewModel()
+        model = GpaOverviewModel(persistence: TritonCalcPersistence(), delegate: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -31,28 +31,21 @@ extension OverviewViewController {
             guard let target = segue.destination as? CurrentGpaViewController else {
                 return
             }
-            target.prepare(model: model.actualizedGPA, delegate: self)
+            target.prepare(model: model.currentGpa, delegate: self)
         } 
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        refresh()
-    }
-    
 }
 
-extension OverviewViewController: Refreshable {
+extension OverviewViewController: ModelRefreshDelegate {
     func refresh() {
-        model.refresh()
-        actualHoursCompleted.text = "\(model.actualizedGPA.hours)"
-        actualPointsEarned.text = model.actualizedGPA.pointsEarned.asString()
-        actualGPA.text = model.actualizedGPA.average.asString()
-        projectedHoursCompleted.text = "\(model.projectedGPA.hours)"
-        projectedPointsEarned.text = model.projectedGPA.pointsEarned.asString()
-        projectedGPA.text = model.projectedGPA.average.asString()
+        actualHoursCompleted.text = "\(model.currentGpa.hours)"
+        actualPointsEarned.text = model.currentGpa.pointsEarned.asString()
+        actualGPA.text = model.currentGpa.average.asString()
+        projectedHoursCompleted.text = "\(model.projectedGpa.hours)"
+        projectedPointsEarned.text = model.projectedGpa.pointsEarned.asString()
+        projectedGPA.text = model.projectedGpa.average.asString()
     }
 }
-
 
 
 extension OverviewViewController: GpaOverviewDelegate {
