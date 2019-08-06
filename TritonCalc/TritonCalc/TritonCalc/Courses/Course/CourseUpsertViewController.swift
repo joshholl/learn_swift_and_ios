@@ -1,11 +1,3 @@
-//
-//  CourseUpsertViewController.swift
-//  TritonCalc
-//
-//  Created by Josh Hollandsworth on 8/4/19.
-//  Copyright © 2019 Joshholl. All rights reserved.
-//
-
 import Foundation
 import UIKit
 
@@ -20,21 +12,21 @@ class CourseUpsertViewController: UIViewController {
     private var model: CourseUpsertModel!
 }
 
+// MARK: View Load
 extension CourseUpsertViewController   {
     override func viewDidLoad() {
-
-        //Course Name
+        // MARK: Course Name
         courseNameTextField.delegate = self
         courseNameTextField.text = model.course.name
         
-        //Credit Hour Stepper
+        // MARK: Credit Hour Stepper
         creditHourStepper.minimumValue = model.minCourseHoursStepper
         creditHourStepper.maximumValue = model.maxCourseHoursStepper
         creditHourStepper.value = Double(model.course.creditHours)
         creditHourStepper.stepValue = model.courseHoursStepperSize
         creditHourStepperLabel.text = "\(Int(creditHourStepper.value))"
         
-        // Grade Picker
+        // MARK: Grade Picker
         projectedGradePicker = UIPickerView()
         projectedGradePicker.delegate = self
         projectedGradePicker.dataSource = self
@@ -42,12 +34,14 @@ extension CourseUpsertViewController   {
     }
 }
 
+// MARK: Segue Setup
 extension CourseUpsertViewController {
     func `for`(model: CourseUpsertModel) {
         self.model = model
     }
 }
 
+// MARK: Actions
 extension CourseUpsertViewController {
     @IBAction private func courseHoursChanged(_ sender: UIStepper) {
         creditHourStepperLabel.text = "\(Int(sender.value))"
@@ -62,7 +56,7 @@ extension CourseUpsertViewController {
     }
 }
 
-
+// MARK: Text Field Delegate
 extension CourseUpsertViewController: UITextFieldDelegate {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         return true
@@ -74,6 +68,7 @@ extension CourseUpsertViewController: UITextFieldDelegate {
     }
 }
 
+// MARK: Picker Delegate
 extension CourseUpsertViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return model.letterGrades[row]
@@ -85,6 +80,7 @@ extension CourseUpsertViewController: UIPickerViewDelegate {
     }
 }
 
+// MARK: Picker Datasource
 extension CourseUpsertViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

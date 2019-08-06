@@ -11,7 +11,6 @@
 		FD0C928E22F60D0A00BCB7AB /* CourseListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0C928D22F60D0A00BCB7AB /* CourseListTableViewController.swift */; };
 		FD0C929022F615A500BCB7AB /* CourseListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0C928F22F615A500BCB7AB /* CourseListModel.swift */; };
 		FD522DAF22F3D9540026FE69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD522DAE22F3D9540026FE69 /* AppDelegate.swift */; };
-		FD522DB122F3D9540026FE69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD522DB022F3D9540026FE69 /* ViewController.swift */; };
 		FD522DB622F3D9550026FE69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD522DB522F3D9550026FE69 /* Assets.xcassets */; };
 		FD522DB922F3D9550026FE69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD522DB722F3D9550026FE69 /* LaunchScreen.storyboard */; };
 		FD522DC222F3D9FD0026FE69 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD522DC122F3D9FD0026FE69 /* Course.swift */; };
@@ -21,7 +20,7 @@
 		FDD955E322F72E62003D4625 /* CurrentGpaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD955E222F72E62003D4625 /* CurrentGpaViewController.swift */; };
 		FDD955E522F73CA8003D4625 /* mascot_with_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = FDD955E422F73CA8003D4625 /* mascot_with_shadow.png */; };
 		FDD955E722F76328003D4625 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD955E622F76328003D4625 /* Main.storyboard */; };
-		FDD955EA22F76490003D4625 /* OverviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD955E922F76490003D4625 /* OverviewModel.swift */; };
+		FDD955EA22F76490003D4625 /* GpaOverviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD955E922F76490003D4625 /* GpaOverviewModel.swift */; };
 		FDD955EC22F764DB003D4625 /* GradePointAverage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD955EB22F764DB003D4625 /* GradePointAverage.swift */; };
 		FDD955EE22F76750003D4625 /* OverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD955ED22F76750003D4625 /* OverviewViewController.swift */; };
 		FDD955F022F7676C003D4625 /* Overview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD955EF22F7676C003D4625 /* Overview.storyboard */; };
@@ -32,6 +31,9 @@
 		FDE5949422F7D57B0075D2D3 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE5949322F7D57B0075D2D3 /* Array.swift */; };
 		FDE5949622F7E31A0075D2D3 /* LetterGrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE5949522F7E31A0075D2D3 /* LetterGrade.swift */; };
 		FDE5949822F7E4FA0075D2D3 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE5949722F7E4FA0075D2D3 /* Int.swift */; };
+		FDE5949C22F7F1410075D2D3 /* Refreshable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE5949B22F7F1410075D2D3 /* Refreshable.swift */; };
+		FDE594A122F7F3EF0075D2D3 /* ApplicationSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE594A022F7F3EF0075D2D3 /* ApplicationSession.swift */; };
+		FDE594A422F7F45C0075D2D3 /* GpaPersistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE594A322F7F45C0075D2D3 /* GpaPersistance.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +42,6 @@
 		FD0C928F22F615A500BCB7AB /* CourseListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListModel.swift; sourceTree = "<group>"; };
 		FD522DAB22F3D9540026FE69 /* TritonCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TritonCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD522DAE22F3D9540026FE69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FD522DB022F3D9540026FE69 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FD522DB522F3D9550026FE69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD522DB822F3D9550026FE69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD522DBA22F3D9550026FE69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,7 +52,7 @@
 		FDD955E222F72E62003D4625 /* CurrentGpaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentGpaViewController.swift; sourceTree = "<group>"; };
 		FDD955E422F73CA8003D4625 /* mascot_with_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mascot_with_shadow.png; sourceTree = "<group>"; };
 		FDD955E622F76328003D4625 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		FDD955E922F76490003D4625 /* OverviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewModel.swift; sourceTree = "<group>"; };
+		FDD955E922F76490003D4625 /* GpaOverviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GpaOverviewModel.swift; sourceTree = "<group>"; };
 		FDD955EB22F764DB003D4625 /* GradePointAverage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradePointAverage.swift; sourceTree = "<group>"; };
 		FDD955ED22F76750003D4625 /* OverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewController.swift; sourceTree = "<group>"; };
 		FDD955EF22F7676C003D4625 /* Overview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Overview.storyboard; sourceTree = "<group>"; };
@@ -62,6 +63,9 @@
 		FDE5949322F7D57B0075D2D3 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		FDE5949522F7E31A0075D2D3 /* LetterGrade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterGrade.swift; sourceTree = "<group>"; };
 		FDE5949722F7E4FA0075D2D3 /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		FDE5949B22F7F1410075D2D3 /* Refreshable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Refreshable.swift; sourceTree = "<group>"; };
+		FDE594A022F7F3EF0075D2D3 /* ApplicationSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationSession.swift; sourceTree = "<group>"; };
+		FDE594A322F7F45C0075D2D3 /* GpaPersistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GpaPersistance.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,16 +98,16 @@
 		FD522DAD22F3D9540026FE69 /* TritonCalc */ = {
 			isa = PBXGroup;
 			children = (
+				FDE5949E22F7F38F0075D2D3 /* Session */,
 				FDD955F322F77DA1003D4625 /* Extensions */,
 				FDD955E822F763ED003D4625 /* Overview */,
 				FDD955DB22F682EF003D4625 /* CurrentGpa */,
 				FD522DC322F3E5F50026FE69 /* Courses */,
 				FD522DC022F3D9CA0026FE69 /* Supporting Files */,
-				FD522DAE22F3D9540026FE69 /* AppDelegate.swift */,
-				FD522DB022F3D9540026FE69 /* ViewController.swift */,
 				FDD955E622F76328003D4625 /* Main.storyboard */,
 				FDD955EB22F764DB003D4625 /* GradePointAverage.swift */,
 				FDE5949522F7E31A0075D2D3 /* LetterGrade.swift */,
+				FDE5949B22F7F1410075D2D3 /* Refreshable.swift */,
 			);
 			path = TritonCalc;
 			sourceTree = "<group>";
@@ -163,7 +167,7 @@
 		FDD955E822F763ED003D4625 /* Overview */ = {
 			isa = PBXGroup;
 			children = (
-				FDD955E922F76490003D4625 /* OverviewModel.swift */,
+				FDD955E922F76490003D4625 /* GpaOverviewModel.swift */,
 				FDD955ED22F76750003D4625 /* OverviewViewController.swift */,
 				FDD955EF22F7676C003D4625 /* Overview.storyboard */,
 			);
@@ -178,6 +182,32 @@
 				FDE5949722F7E4FA0075D2D3 /* Int.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FDE5949E22F7F38F0075D2D3 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				FDE594A222F7F4240075D2D3 /* GPA Persistence */,
+				FDE5949F22F7F3C10075D2D3 /* Main */,
+			);
+			name = Session;
+			sourceTree = "<group>";
+		};
+		FDE5949F22F7F3C10075D2D3 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FD522DAE22F3D9540026FE69 /* AppDelegate.swift */,
+				FDE594A022F7F3EF0075D2D3 /* ApplicationSession.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		FDE594A222F7F4240075D2D3 /* GPA Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				FDE594A322F7F45C0075D2D3 /* GpaPersistance.swift */,
+			);
+			path = "GPA Persistence";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,15 +287,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDD955EA22F76490003D4625 /* OverviewModel.swift in Sources */,
+				FDD955EA22F76490003D4625 /* GpaOverviewModel.swift in Sources */,
 				FDD955EE22F76750003D4625 /* OverviewViewController.swift in Sources */,
-				FD522DB122F3D9540026FE69 /* ViewController.swift in Sources */,
 				FD522DC922F3E84B0026FE69 /* CourseListTableVliewCell.swift in Sources */,
+				FDE594A422F7F45C0075D2D3 /* GpaPersistance.swift in Sources */,
 				FDE5949222F7C87D0075D2D3 /* CourseUpsertModel.swift in Sources */,
 				FDE5949622F7E31A0075D2D3 /* LetterGrade.swift in Sources */,
 				FDD955E322F72E62003D4625 /* CurrentGpaViewController.swift in Sources */,
 				FD522DAF22F3D9540026FE69 /* AppDelegate.swift in Sources */,
 				FD0C928E22F60D0A00BCB7AB /* CourseListTableViewController.swift in Sources */,
+				FDE5949C22F7F1410075D2D3 /* Refreshable.swift in Sources */,
+				FDE594A122F7F3EF0075D2D3 /* ApplicationSession.swift in Sources */,
 				FDD955F522F77DBE003D4625 /* Double.swift in Sources */,
 				FDE5949422F7D57B0075D2D3 /* Array.swift in Sources */,
 				FDD955F922F79C02003D4625 /* CourseUpsertViewController.swift in Sources */,

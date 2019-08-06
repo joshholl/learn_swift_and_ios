@@ -24,7 +24,6 @@ class OverviewViewController: UIViewController {
 extension OverviewViewController {
     override func viewDidLoad() {
         model = GpaOverviewModel()
-        refresh()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
