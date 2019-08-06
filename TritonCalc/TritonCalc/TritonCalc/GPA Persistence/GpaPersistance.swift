@@ -31,7 +31,9 @@ final class GpaPersistence: GpaPersistable {
     }
     
     func remove(course: Course) {
-      //  self.courseProjections.first(course)
+        if let index = courseProjections.firstIndex(of: course) {
+            courseProjections.remove(at: index)
+        }
     }
     
     init() {
