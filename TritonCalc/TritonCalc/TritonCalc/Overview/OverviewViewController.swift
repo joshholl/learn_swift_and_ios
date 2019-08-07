@@ -19,11 +19,13 @@ class OverviewViewController: UIViewController {
     @IBOutlet weak var projectedHoursCompleted: UILabel!
     @IBOutlet weak var projectedPointsEarned: UILabel!
     @IBOutlet weak var projectedGPA: UILabel!
+    @IBOutlet weak var projectedHoursInProgress: UILabel!
 }
 
 extension OverviewViewController {
     override func viewDidLoad() {
         model = GpaOverviewModel(persistence: TritonCalcPersistence(), delegate: self)
+        refresh()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -42,6 +44,7 @@ extension OverviewViewController: ModelRefreshDelegate {
         actualPointsEarned.text = model.currentGpa.pointsEarned.asString()
         actualGPA.text = model.currentGpa.average.asString()
         projectedHoursCompleted.text = "\(model.projectedGpa.hours)"
+        projectedHoursInProgress.text = "\(model.projectedHoursInProgress)"
         projectedPointsEarned.text = model.projectedGpa.pointsEarned.asString()
         projectedGPA.text = model.projectedGpa.average.asString()
     }

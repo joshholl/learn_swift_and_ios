@@ -92,7 +92,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Gw2-ZL-JhT" userLabel="Projected Hours Stack View">
-                                        <rect key="frame" x="0.0" y="168" width="337.5" height="148"/>
+                                        <rect key="frame" x="0.0" y="168" width="337.5" height="188.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Projected Hours" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="upY-6f-nM7">
                                                 <rect key="frame" x="0.0" y="0.0" width="337.5" height="26.5"/>
@@ -120,8 +120,25 @@
                                                     <constraint firstItem="xor-WX-wrN" firstAttribute="width" secondItem="gDA-T6-Hu4" secondAttribute="width" multiplier="0.7" id="4h3-xx-6Vm"/>
                                                 </constraints>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xL8-mH-r65">
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Jb-MZ-y2X">
                                                 <rect key="frame" x="0.0" y="87" width="337.5" height="20.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours In Progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0w-kI-SYQ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="136.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" name="UmslLightGray"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q31-Ar-Ixt">
+                                                        <rect key="frame" x="136.5" y="0.0" width="201" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" name="UmslLightestGray"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xL8-mH-r65">
+                                                <rect key="frame" x="0.0" y="127.5" width="337.5" height="20.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points Earned" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Yi-au-dVm">
                                                         <rect key="frame" x="0.0" y="0.0" width="251" height="20.5"/>
@@ -138,7 +155,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fuJ-ST-APq">
-                                                <rect key="frame" x="0.0" y="127.5" width="337.5" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="168" width="337.5" height="20.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GPA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0g0-RN-nCm">
                                                         <rect key="frame" x="0.0" y="0.0" width="251" height="20.5"/>
@@ -161,7 +178,7 @@
                                         </constraints>
                                     </stackView>
                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XBP-mM-hd6">
-                                        <rect key="frame" x="0.0" y="336" width="337.5" height="64"/>
+                                        <rect key="frame" x="0.0" y="376.5" width="337.5" height="23.5"/>
                                         <color key="backgroundColor" name="UmslRed"/>
                                     </view>
                                 </subviews>
@@ -198,6 +215,7 @@
                         <outlet property="actualPointsEarned" destination="hGa-Iw-jwL" id="aJ6-95-e97"/>
                         <outlet property="projectedGPA" destination="0zM-zc-awC" id="fCf-jn-5iH"/>
                         <outlet property="projectedHoursCompleted" destination="tje-86-YWI" id="2IZ-fP-s2X"/>
+                        <outlet property="projectedHoursInProgress" destination="q31-Ar-Ixt" id="5cV-MR-YMA"/>
                         <outlet property="projectedPointsEarned" destination="NaC-lb-4E8" id="2Rq-N5-UK2"/>
                     </connections>
                 </viewController>

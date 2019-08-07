@@ -14,9 +14,7 @@ final class CourseListModel {
     private var courseList: CourseList
     private var persistence: TritonCalcPersistence
     
-    
     private weak var delegate: ModelRefreshDelegate?
-    
     
     var count: Int { return courseList.count }
     let rowHeight: Double = 64.0
@@ -24,7 +22,12 @@ final class CourseListModel {
     init(persistence: TritonCalcPersistence, delegate: ModelRefreshDelegate) {
         self.delegate = delegate
         self.persistence = persistence
+        self.courseList = []
+    }
+    
+    func getCourses() {
         self.courseList = persistence.coureses
+        self.delegate?.refresh()
     }
 }
 
@@ -38,5 +41,6 @@ extension CourseListModel {
             return
         }
         self.persistence.delete(course: course)
+        self.getCourses()
     }
 }

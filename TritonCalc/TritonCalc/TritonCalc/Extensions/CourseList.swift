@@ -10,16 +10,26 @@ import Foundation
 typealias CourseList = [Course]
 
 extension CourseList {
-        var totalHours: Int {
-            return self.reduce(0, { sum, next in sum + next.creditHours })
-        }
+    var totalHours: Int {
+        return self.reduce(0, { sum, next in sum + next.creditHours })
+    }
     
-        var gpa: GradePointAverage {
-            get {
-            let applicableCourses = self.filter{$0.grade != nil}
+    var inProgressHours: Int {
+        return inProgressCourses.totalHours
+    }
+    var gpa: GradePointAverage {
+        return GradePointAverage(hours: completedCourses.totalHours, pointsEarned: completedCourses.pointsEarned)
+    }
     
-            return GradePointAverage(hours: self.totalHours,
-                                     pointsEarned: applicableCourses.reduce(0, {sum, next in sum + next.points}))
-            }
-        }
+    private var inProgressCourses: CourseList {
+        return self.filter({$0.grade == nil })
+    }
+    
+    private var completedCourses: CourseList {
+        return self.filter({$0.grade != nil })
+    }
+    
+    private var pointsEarned: Double{
+        return self.reduce(0, {sum, next in sum + next.points})
+    }
 }

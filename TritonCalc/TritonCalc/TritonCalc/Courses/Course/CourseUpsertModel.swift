@@ -10,6 +10,8 @@ final class CourseUpsertModel {
     let maxCourseHoursStepper: Double = 5
     let courseHoursStepperSize: Double = 1
     let noneGradeValue: String = "None"
+    let saveButtonText: String
+    
     private(set) var letterGrades: [String]
     
     init(course: Course?, persistence: TritonCalcPersistence, delegate: ModelRefreshDelegate) {
@@ -18,6 +20,7 @@ final class CourseUpsertModel {
     
         letterGrades = [noneGradeValue]
         letterGrades.append(contentsOf: LetterGrade.allCases.map({$0.rawValue.letter}))
+        self.saveButtonText = course != nil ? "Update Course" : "Add Course"
         self.course = course
     }
 }
@@ -30,6 +33,7 @@ extension CourseUpsertModel {
         let updatedCourse = Course(id: id, name: name, creditHours: hours, isSubstitue: isSubstitue, grade: grade)
         
         self.persistence.save(course: updatedCourse)
+        delegate?.refresh()
     }
     
     func selectedLetterGradeIndex() -> Int{

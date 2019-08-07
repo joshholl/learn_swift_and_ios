@@ -9,6 +9,7 @@ class CourseUpsertViewController: UIViewController {
     @IBOutlet weak var projectedGradeTextField: UITextField!
     @IBOutlet weak var isSubstituteSwitch: UISwitch!
     
+    @IBOutlet weak var saveButton: UIButton!
     private var projectedGradePicker: UIPickerView!
     private var model: CourseUpsertModel!
 }
@@ -32,7 +33,7 @@ extension CourseUpsertViewController   {
         projectedGradePicker.delegate = self
         projectedGradePicker.dataSource = self
         projectedGradeTextField.inputView = projectedGradePicker
-            let row = model!.selectedLetterGradeIndex()
+        let row = model!.selectedLetterGradeIndex()
        
         projectedGradePicker.selectRow(row, inComponent: 0, animated: true)
         pickerView(projectedGradePicker, didSelectRow: row, inComponent: 0)
@@ -41,6 +42,9 @@ extension CourseUpsertViewController   {
         //MARK: Substitute Switch Setup
         isSubstituteSwitch.isOn = model.course?.isSubstitue ?? false
         isSubstituteSwitch.isEnabled = model.course?.grade != nil
+        
+    
+        self.saveButton.setTitle(model.saveButtonText, for: .normal)
     }
 }
 

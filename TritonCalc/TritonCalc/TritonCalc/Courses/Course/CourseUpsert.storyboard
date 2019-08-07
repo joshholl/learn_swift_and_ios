@@ -126,6 +126,7 @@
                         <outlet property="creditHourStepperLabel" destination="AVR-DL-1VG" id="Cay-Xm-6m3"/>
                         <outlet property="isSubstituteSwitch" destination="fF4-Tj-Xzc" id="ljr-lZ-bZ4"/>
                         <outlet property="projectedGradeTextField" destination="73H-qv-CAf" id="vDH-Oe-vHS"/>
+                        <outlet property="saveButton" destination="Bf6-sm-rm9" id="23U-gC-FuL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zKn-ik-1Z3" userLabel="First Responder" sceneMemberID="firstResponder"/>

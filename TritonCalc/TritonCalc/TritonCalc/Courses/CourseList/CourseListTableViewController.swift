@@ -11,6 +11,7 @@ import UIKit
 
 final class CourseListTableViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     private var model: CourseListModel!
 }
 
@@ -20,11 +21,21 @@ extension CourseListTableViewController {
         super.viewDidLoad()
         model = CourseListModel(persistence: TritonCalcPersistence(), delegate: self)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.isHidden = true
+        activityIndicator.startAnimating()
+        model.getCourses()
+    }
 }
 
 extension CourseListTableViewController: ModelRefreshDelegate{
     func refresh() {
-        tableView.reloadData()
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+            self?.tableView.isHidden = false
+            self?.activityIndicator.stopAnimating()
+        }
     }
 }
 extension CourseListTableViewController {
