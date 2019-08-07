@@ -47,6 +47,13 @@ extension CourseListTableViewController {
             upsertController.for(model: courseModel)
         }
     }
+    
+    func deleteCourse(at index: Int) {
+        tableView.isHidden = true
+        activityIndicator.startAnimating()
+    
+        self.model.deleteCourse(at: index)
+    }
 }
 
 
@@ -83,7 +90,9 @@ extension CourseListTableViewController: UITableViewDelegate {
 
             let alertController = UIAlertController(title: "Delete Course \(cell.course.name)?", message: "Confirm", preferredStyle: .alert)
             alertController.addAction( UIAlertAction(title: "Yes", style: .default, handler:
-                { (_) in self.model.deleteCourse(at: indexPath.row) }))
+                { (_) in self.deleteCourse(at: indexPath.row)
+                    
+                   }))
             alertController.addAction( UIAlertAction(title: "Cancel", style: .cancel ))
             self.present(alertController, animated: true)
         default:

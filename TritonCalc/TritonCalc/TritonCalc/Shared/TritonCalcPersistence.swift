@@ -68,16 +68,13 @@ final class TritonCalcPersistence {
         return result
     }
     
-    // TODO: Must fix
     func delete(course: Course) {
-        DispatchQueue.main.async { [weak self] in
             guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
                 Log.error("Could not locate AppDelegate")
                 return
             }
             
-            self?.delete(course: course, withAppDelegate: appDelegate)
-        }
+            self.delete(course: course, withAppDelegate: appDelegate)
     }
     
     func save(course: Course) {
