@@ -92,7 +92,14 @@ final class TritonCalcPersistence {
     }
     
     func save(gpa: GradePointAverage) {
-        
+        DispatchQueue.main.async { [weak self] in
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+                Log.error("Could not locate AppDelegate")
+                return
+            }
+            
+            self?.save(gpa: gpa, withAppDelegate: appDelegate)
+        }
     }
 }
 
@@ -118,6 +125,31 @@ extension TritonCalcPersistence {
             
             try managedContext.save()
             Log.info("Successfully saved \(course.name)")
+        } catch {
+            Log.error(error)
+        }
+    }
+   
+    private func save(gpa: GradePointAverage, withAppDelegate appDelegate: AppDelegate) {
+
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        do {
+            //find existing course
+            let fetchEntity = NSFetchRequest<CurrentGpaEntity>(entityName: "CurrentGpaEntity")
+            var entity = try managedContext.fetch(fetchEntity).first
+            
+            if entity == nil {
+                entity = CurrentGpaEntity(context: managedContext)
+            }
+            
+            entity?.hours = Int16(gpa.hours)
+            entity?.pointsEarned = gpa.pointsEarned
+            
+            
+            try managedContext.save()
+            Log.info("Successfully saved current gpa")
         } catch {
             Log.error(error)
         }

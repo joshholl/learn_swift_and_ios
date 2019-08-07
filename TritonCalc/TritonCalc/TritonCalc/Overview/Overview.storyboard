@@ -19,6 +19,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="X0w-mo-Ubh">
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vi6-6r-JfY" userLabel="Main Stack View">
                                 <rect key="frame" x="19" y="143.5" width="337.5" height="400"/>
                                 <subviews>
@@ -210,9 +214,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="X0w-mo-Ubh" id="Lvd-lu-4U8"/>
                         <outlet property="actualGPA" destination="VMr-Wq-ho6" id="Q1t-G9-2Aa"/>
                         <outlet property="actualHoursCompleted" destination="Tkl-HA-WVK" id="zBE-Aq-8aW"/>
                         <outlet property="actualPointsEarned" destination="hGa-Iw-jwL" id="aJ6-95-e97"/>
+                        <outlet property="mainStackView" destination="vi6-6r-JfY" id="pey-xA-3cj"/>
                         <outlet property="projectedGPA" destination="0zM-zc-awC" id="fCf-jn-5iH"/>
                         <outlet property="projectedHoursCompleted" destination="tje-86-YWI" id="2IZ-fP-s2X"/>
                         <outlet property="projectedHoursInProgress" destination="q31-Ar-Ixt" id="5cV-MR-YMA"/>
