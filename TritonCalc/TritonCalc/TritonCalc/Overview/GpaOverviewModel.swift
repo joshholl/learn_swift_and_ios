@@ -21,6 +21,11 @@ class GpaOverviewModel {
             return courses.inProgressHours
         }
     }
+    
+    var cumulativeGpa: GradePointAverage {
+        return projectedGpa + currentGpa
+  
+    }
     init(persistence: TritonCalcPersistence, delegate: ModelRefreshDelegate) {
         self.persistence = persistence;
         self.delegate = delegate

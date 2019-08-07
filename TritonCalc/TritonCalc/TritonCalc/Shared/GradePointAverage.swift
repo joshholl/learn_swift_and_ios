@@ -49,3 +49,12 @@ extension GradePointAverage {
         return GradePointAverage(hours: hours, pointsEarned: points)
     }
 }
+
+extension GradePointAverage {
+    static func +(left: GradePointAverage, right: GradePointAverage) -> GradePointAverage {
+        let hours = left.hours + right.hours
+        let points = left.pointsEarned  + right.pointsEarned
+        
+        return GradePointAverage(hours: hours, pointsEarned: points)
+    }
+}

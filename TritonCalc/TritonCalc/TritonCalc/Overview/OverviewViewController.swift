@@ -22,6 +22,9 @@ class OverviewViewController: UIViewController {
     @IBOutlet weak var projectedPointsEarned: UILabel!
     @IBOutlet weak var projectedGPA: UILabel!
     @IBOutlet weak var projectedHoursInProgress: UILabel!
+    @IBOutlet weak var cumulativeHoursCompleted: UILabel!
+    @IBOutlet weak var cumulativePointsEarned: UILabel!
+    @IBOutlet weak var cumulativeGpa: UILabel!
 }
 
 extension OverviewViewController {
@@ -60,6 +63,10 @@ extension OverviewViewController: ModelRefreshDelegate {
             self?.projectedHoursInProgress.text = "\(model.projectedHoursInProgress)"
             self?.projectedPointsEarned.text = model.projectedGpa.pointsEarned.asString()
             self?.projectedGPA.text = model.projectedGpa.average.asString()
+            self?.cumulativeHoursCompleted.text = "\(model.cumulativeGpa.hours)"
+            self?.cumulativePointsEarned.text = model.cumulativeGpa.pointsEarned.asString()
+            self?.cumulativeGpa.text = self?.model.cumulativeGpa.average.asString()
+            
             
             self?.mainStackView.isHidden = false
             self?.activityIndicator.stopAnimating()
