@@ -119,6 +119,7 @@ extension TritonCalcPersistence {
             entity?.creditHours = Int32(course.creditHours)
             entity?.isSubstitute = course.isSubstitue ?? false
             entity?.letterGrade = course.grade?.rawValue.letter
+            entity?.previousLetterGrade = course.previousGrade?.rawValue.letter
             
             try managedContext.save()
             Log.info("Successfully saved \(course.name)")

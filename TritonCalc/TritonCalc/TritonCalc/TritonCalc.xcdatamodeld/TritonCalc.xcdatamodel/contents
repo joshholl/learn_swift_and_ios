@@ -6,13 +6,14 @@
         <attribute name="isSubstitute" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="letterGrade" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="previousLetterGrade" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="CurrentGpaEntity" representedClassName="CurrentGpaEntity" syncable="YES" codeGenerationType="class">
         <attribute name="hours" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="pointsEarned" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="CourseEntity" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="CourseEntity" positionX="-63" positionY="-18" width="128" height="135"/>
         <element name="CurrentGpaEntity" positionX="-45" positionY="36" width="128" height="75"/>
     </elements>
 </model>
