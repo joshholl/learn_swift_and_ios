@@ -43,6 +43,14 @@ extension CourseListModel {
         guard let course = courseList.element(at: index) else {
             return
         }
+        
+        if(course.isSubstitue == true) {
+            let gpa = self.persistence.currentGpa
+            let newHours = gpa.hours + course.creditHours
+            let newPoints = gpa.pointsEarned + (course.previousGrade?.rawValue.pointValue ?? 0)
+            
+            self.persistence.save(gpa: GradePointAverage(hours: newHours, pointsEarned: newPoints))
+        }
         self.persistence.delete(course: course)
         getCourses()
     }

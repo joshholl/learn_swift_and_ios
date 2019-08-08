@@ -39,12 +39,12 @@ extension CourseUpsertModel {
 
         self.persistence.save(course: updated)
         
-        if((CourseUpsertModel.orDefault(course?.isSubstitue,false) != updated.isSubstitue) ||
+        if(((course?.isSubstitue ?? false) != updated.isSubstitue) ||
                 (course?.previousGrade != updated.previousGrade)) {
             
             let gpa = persistence.currentGpa
-            let newHours = gpa.hours + CourseUpsertModel.orDefault(course?.creditHours, 0) - updated.creditHours
-            let newPointsEarned = gpa.pointsEarned + CourseUpsertModel.orDefault(course?.points, 0.0) - updated.points
+            let newHours = gpa.hours + (course?.creditHours ?? 0) - updated.creditHours
+            let newPointsEarned = gpa.pointsEarned + (course?.points ?? 0.0) - updated.points
             let newGpa = GradePointAverage(hours: newHours, pointsEarned: newPointsEarned)
             self.persistence.save(gpa: newGpa)
         }
@@ -61,12 +61,6 @@ extension CourseUpsertModel {
             return self.letterGrades.firstIndex(of: self.course?.grade?.rawValue.letter ?? noneGradeValue)!
         }
     }
-    
-    fileprivate static func orDefault<T>(_ nillable: T?, _ defaultValue: T) -> T {
-        guard let real = nillable else {
-            return defaultValue
-        }
-        return real;
-    }
+   
 }
 
