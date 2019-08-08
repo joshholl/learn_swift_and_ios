@@ -22,11 +22,12 @@ extension CourseList {
     }
     
     private var inProgressCourses: CourseList {
-        return self.filter({$0.grade == nil })
+        return self.filter({$0.grade == "None" || $0.grade == nil })
     }
     
     private var completedCourses: CourseList {
-        return self.filter({$0.grade != nil })
+        let courses =  self.filter({$0.grade != "None" && $0.grade != nil })
+        return courses
     }
     
     private var pointsEarned: Double{

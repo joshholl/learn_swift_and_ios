@@ -6,27 +6,20 @@ struct Course {
     let name: String
     let creditHours: Int
     let isSubstitue: Bool?
-    let grade: LetterGrade?
-    let previousGrade: LetterGrade?
+    let grade: String?
+    let previousGrade: String?
 }
 
 extension Course {
     var points: Double {
         get {
-            guard let pointValue = self.grade?.rawValue.pointValue else {
-                return 0
-            }
-            
-            return Double(creditHours) * pointValue
+            return Double(creditHours) * LetterGradeHelper.pointsForGrade(grade: grade)
         }
     }
     
     var previousPoints: Double {
         get {
-            guard let pointValue = self.previousGrade?.rawValue.pointValue else {
-                return 0
-            }
-            return Double(creditHours) * pointValue
+            return Double(creditHours) * LetterGradeHelper.pointsForGrade(grade: previousGrade)
         }
     }
 }
@@ -42,10 +35,11 @@ extension Course {
         
         let creditHours = Int(courseEntity.creditHours)
         let isSubstitue = courseEntity.isSubstitute
-        let letterGrade = LetterGrade.from(string: courseEntity.letterGrade)
-        let previousLetterGrade = LetterGrade.from(string: courseEntity.previousLetterGrade)
-        
-        return Course(id: id, name: name, creditHours: creditHours, isSubstitue: isSubstitue, grade: letterGrade, previousGrade: previousLetterGrade)
+        let letterGrade = courseEntity.letterGrade
+        let previousGrade = courseEntity.previousLetterGrade
+ 
+        return Course(id: id, name: name,
+                      creditHours: creditHours, isSubstitue: isSubstitue, grade: letterGrade, previousGrade: previousGrade)
     }
 }
 

@@ -18,7 +18,7 @@ final class CurrentGpaModel {
         guard let value = average else {
             return false
         }
-        return value >= 0 && value < 4
+        return value >= 0 && value <= 4
     }
     
     
@@ -26,7 +26,7 @@ final class CurrentGpaModel {
         guard let value = hours else {
             return false
         }
-        return value >= 0 && value < 160
+        return value >= 0 && value <= 160
     }
 
     func canSave() -> Bool {

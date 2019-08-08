@@ -24,7 +24,6 @@ extension CurrentGpaViewController {
     
     @IBAction private func viewTapped(_ sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
-        
     }
     
     @IBAction func textDidChange(_ sender: UITextField) {

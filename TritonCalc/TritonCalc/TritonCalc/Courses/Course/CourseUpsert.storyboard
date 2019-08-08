@@ -36,6 +36,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="textChanged:" destination="yt2-78-ziR" eventType="editingChanged" id="Htz-cI-0Yr"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -78,6 +81,10 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="textChanged:" destination="yt2-78-ziR" eventType="editingChanged" id="Pk1-4D-zup"/>
+                                                    <action selector="textChanged:" destination="yt2-78-ziR" eventType="valueChanged" id="w8e-sP-PVC"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -112,6 +119,10 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <action selector="textChanged:" destination="yt2-78-ziR" eventType="editingChanged" id="6aX-RK-yuA"/>
+                                                    <action selector="textChanged:" destination="yt2-78-ziR" eventType="valueChanged" id="BTj-xy-fG1"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -132,6 +143,7 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" name="UmslRed"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="LMZ-Ad-z9y" firstAttribute="centerX" secondItem="kM0-zP-1qL" secondAttribute="centerX" id="dGX-LR-7eL"/>
                             <constraint firstItem="LMZ-Ad-z9y" firstAttribute="width" secondItem="Qsy-6c-Uth" secondAttribute="width" multiplier="0.9" id="gZ8-TQ-bvL"/>
@@ -151,6 +163,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zKn-ik-1Z3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="FRW-Ee-iEf">
+                    <connections>
+                        <action selector="viewTapped:" destination="yt2-78-ziR" id="A7d-2r-hg1"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
         </scene>
     </scenes>

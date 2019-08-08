@@ -15,8 +15,6 @@ class CourseUpsertViewController: UIViewController {
     private var previousGradePicker: UIPickerView!
     private var model: CourseUpsertModel!
     
-   
-    
 }
 
 // MARK: View Load
@@ -29,7 +27,7 @@ extension CourseUpsertViewController   {
         // MARK: Credit Hour Stepper
         creditHourStepper.minimumValue = model.minCourseHoursStepper
         creditHourStepper.maximumValue = model.maxCourseHoursStepper
-        creditHourStepper.value = Double(model.course?.creditHours ?? 3)
+        creditHourStepper.value = Double(model.hours ?? model.courseHoursStepperDefault)
         creditHourStepper.stepValue = model.courseHoursStepperSize
         creditHourStepperLabel.text = "\(Int(creditHourStepper.value))"
         
@@ -38,26 +36,26 @@ extension CourseUpsertViewController   {
         projectedGradePicker.delegate = self
         projectedGradePicker.dataSource = self
         projectedGradeTextField.inputView = projectedGradePicker
-        
+
         let projectedRow = model!.selectedLetterGradeIndex(isForSubstitution: false)
         projectedGradePicker.selectRow(projectedRow, inComponent: 0, animated: true)
         pickerView(projectedGradePicker, didSelectRow: projectedRow, inComponent: 0)
-        
-        
-        
+
+
         // MARK: Previous Grade Picker
         previousGradePicker = UIPickerView()
         previousGradePicker.delegate = self
         previousGradePicker.dataSource = self
         previousGradeTextField.inputView = previousGradePicker
-        
+        previousGradeTextField.isEnabled =  false
+
         let previousGradeRow = model!.selectedLetterGradeIndex(isForSubstitution: true)
         previousGradePicker.selectRow(previousGradeRow, inComponent: 0, animated: true)
         pickerView(previousGradePicker, didSelectRow: previousGradeRow, inComponent: 0)
-        
+//
         
         //MARK: Substitute Switch Setup
-        isSubstituteSwitch.isOn = model.course?.isSubstitue ?? false
+        isSubstituteSwitch.setOn(model?.isSubstitute ?? false, animated: false)
         isSubstituteSwitch.isEnabled = model.course?.grade != nil
         
         
@@ -76,34 +74,69 @@ extension CourseUpsertViewController {
 extension CourseUpsertViewController {
     @IBAction private func courseHoursChanged(_ sender: UIStepper) {
         creditHourStepperLabel.text = "\(Int(sender.value))"
+        model.hours = Int(sender.value)
     }
     
     @IBAction private func addCourseTapped(_ sender: UIButton) {
-       model.save(name: courseNameTextField.text ?? "",
-                  hours: Int(creditHourStepper.value),
-                  grade: projectedGradeTextField.text ?? "",
-                    isSubstitue: isSubstituteSwitch.isOn,
-                    previousGrade: previousGradeTextField.text)
-        
-        navigationController?.popViewController(animated: true)
-    }
-    @IBAction func isSubstitueChanged(_ sender: Any) {
-        previousGradeTextField.isEnabled = isSubstituteSwitch.isOn
-        if(!previousGradeTextField.isEnabled) {
-            previousGradeTextField.text = nil
+        self.view.endEditing(true)
+        guard let validModel = model  else {
+            return
+        }
+        if(validModel.canSave()) {
+            validModel.save()
+            navigationController?.popViewController(animated: true)
         }
     }
+    
+    @IBAction func isSubstitueChanged(_ sender: Any) {
+        previousGradeTextField.isEnabled = isSubstituteSwitch.isOn
+        model.isSubstitute = isSubstituteSwitch.isOn
+        if(!previousGradeTextField.isEnabled) {
+            previousGradeTextField.text = nil
+            model.previousGrade = nil
+        }
+    }
+    
+    @IBAction func viewTapped(_ sender: Any) {
+        self.view.endEditing(true)
+    }
+    
+    @IBAction func textChanged(_ sender: UITextField) {
+        let value = sender.text
+        
+        switch sender {
+        case courseNameTextField:
+            model?.name = value
+            sender.textColor = model!.isNameValid(value) ? UIColor.black :  UIColor(named: "UmslRed")
+        case projectedGradeTextField:
+            model?.projectedGrade = value
+        case previousGradeTextField:
+            let value = sender.text
+            model?.previousGrade = value
+            sender.textColor = model!.isPreviousGradeValid(value) ? UIColor.black :  UIColor(named: "UmslRed")
+        default:
+            break
+        }
+    }
+   
 }
 
 // MARK: Text Field Delegate
 extension CourseUpsertViewController: UITextFieldDelegate {
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        return true
-    }
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return true
+    }
+    
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        switch textField {
+        case previousGradeTextField: fallthrough
+        case projectedGradeTextField : return false
+        default: return true
+        }
+        
     }
 }
 
@@ -127,12 +160,14 @@ extension CourseUpsertViewController: UIPickerViewDelegate {
     private func selectPreviousGrade(row: Int) {
         let letterGradeText = model.replaceableLetterGrades[row]
         previousGradeTextField.text = letterGradeText
+        model.previousGrade = letterGradeText
         previousGradeTextField.isEnabled = true
     }
     
     private func selectProjectedGrade(row: Int) {
         let letterGradeText = model.letterGrades[row]
         projectedGradeTextField.text = letterGradeText
+        model.projectedGrade = letterGradeText
         isSubstituteSwitch.isEnabled = letterGradeText != model.noneGradeValue
     }
 }

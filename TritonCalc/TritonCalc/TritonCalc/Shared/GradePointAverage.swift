@@ -58,3 +58,9 @@ extension GradePointAverage {
         return GradePointAverage(hours: hours, pointsEarned: points)
     }
 }
+
+extension GradePointAverage: Equatable {
+    static func == (lhs: GradePointAverage, rhs: GradePointAverage) -> Bool {
+        return lhs.hours == rhs.hours && lhs.pointsEarned == rhs.pointsEarned
+    }
+}

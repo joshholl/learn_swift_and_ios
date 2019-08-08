@@ -15,7 +15,7 @@ final class CourseListTableViewCell : UITableViewCell {
     }
     
     private var displayableLetterGrade: String {
-        return self.course.grade?.rawValue.letter ?? "None"
+        return self.course.grade ?? "None"
     }
     
     func forCourse(_ course: Course) {
