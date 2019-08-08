@@ -42,6 +42,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                <connections>
+                                                    <action selector="textDidChange:" destination="6Mt-cl-kfb" eventType="editingChanged" id="lI4-DT-9N1"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -59,6 +62,9 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                <connections>
+                                                    <action selector="textDidChange:" destination="6Mt-cl-kfb" eventType="editingChanged" id="abd-tC-8O4"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -81,6 +87,7 @@
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" name="UmslRed"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Q3d-nY-Huq" firstAttribute="width" secondItem="h0m-tT-qNn" secondAttribute="width" multiplier="0.9" id="7a9-yP-MiL"/>
                             <constraint firstItem="Q3d-nY-Huq" firstAttribute="centerY" secondItem="Xjz-ay-EMs" secondAttribute="centerY" multiplier="0.6" id="7eA-4n-as0"/>
@@ -91,6 +98,9 @@
                             <constraint firstItem="Pic-Y7-MaP" firstAttribute="top" secondItem="Q3d-nY-Huq" secondAttribute="bottom" constant="60" id="sKU-uZ-3B6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Xjz-ay-EMs"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="a8E-Nz-kFb" appends="YES" id="1q8-o4-X6P"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="averageTextField" destination="QPg-eo-lEy" id="2x3-Ib-Kho"/>
@@ -99,6 +109,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ar5-vF-DAt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="a8E-Nz-kFb">
+                    <connections>
+                        <action selector="viewTapped:" destination="6Mt-cl-kfb" id="5Bt-MB-rCb"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
         </scene>
     </scenes>

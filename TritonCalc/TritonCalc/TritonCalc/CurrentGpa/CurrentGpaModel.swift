@@ -1,10 +1,8 @@
 import Foundation
 
 final class CurrentGpaModel {
-
     private var persistence: TritonCalcPersistence
     private weak var delegate: ModelRefreshDelegate?
-    
     
     var hours : Int?
     var average: Double?
@@ -30,9 +28,7 @@ final class CurrentGpaModel {
         }
         return value >= 0 && value < 160
     }
-    
-    
-    
+
     func canSave() -> Bool {
         return areHoursValid(self.hours) && isAverageValid(self.average)
     }
