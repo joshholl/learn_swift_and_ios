@@ -26,6 +26,7 @@
 		FDD955F522F77DBE003D4625 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD955F422F77DBE003D4625 /* Double.swift */; };
 		FDD955F722F79BDC003D4625 /* CourseUpsert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD955F622F79BDC003D4625 /* CourseUpsert.storyboard */; };
 		FDD955F922F79C02003D4625 /* CourseUpsertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD955F822F79C02003D4625 /* CourseUpsertViewController.swift */; };
+		FDE3EF7122FBCA66007B8C6F /* CurrentGpaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE3EF7022FBCA66007B8C6F /* CurrentGpaModel.swift */; };
 		FDE5949222F7C87D0075D2D3 /* CourseUpsertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE5949122F7C87D0075D2D3 /* CourseUpsertModel.swift */; };
 		FDE5949422F7D57B0075D2D3 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE5949322F7D57B0075D2D3 /* Array.swift */; };
 		FDE5949622F7E31A0075D2D3 /* LetterGrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE5949522F7E31A0075D2D3 /* LetterGrade.swift */; };
@@ -60,6 +61,7 @@
 		FDD955F422F77DBE003D4625 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		FDD955F622F79BDC003D4625 /* CourseUpsert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CourseUpsert.storyboard; sourceTree = "<group>"; };
 		FDD955F822F79C02003D4625 /* CourseUpsertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseUpsertViewController.swift; sourceTree = "<group>"; };
+		FDE3EF7022FBCA66007B8C6F /* CurrentGpaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentGpaModel.swift; sourceTree = "<group>"; };
 		FDE5949122F7C87D0075D2D3 /* CourseUpsertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseUpsertModel.swift; sourceTree = "<group>"; };
 		FDE5949322F7D57B0075D2D3 /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		FDE5949522F7E31A0075D2D3 /* LetterGrade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterGrade.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			children = (
 				FDD955E022F72E38003D4625 /* CurrentGpa.storyboard */,
 				FDD955E222F72E62003D4625 /* CurrentGpaViewController.swift */,
+				FDE3EF7022FBCA66007B8C6F /* CurrentGpaModel.swift */,
 			);
 			path = CurrentGpa;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				FDE5949422F7D57B0075D2D3 /* Array.swift in Sources */,
 				FDD955F922F79C02003D4625 /* CourseUpsertViewController.swift in Sources */,
 				FD0C929022F615A500BCB7AB /* CourseListModel.swift in Sources */,
+				FDE3EF7122FBCA66007B8C6F /* CurrentGpaModel.swift in Sources */,
 				FDE594CA22F9450C0075D2D3 /* CourseList.swift in Sources */,
 				FDD955EC22F764DB003D4625 /* GradePointAverage.swift in Sources */,
 				FDE594D922FA67E70075D2D3 /* Course.swift in Sources */,

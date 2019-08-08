@@ -12,7 +12,7 @@ final class CourseUpsertModel {
     let courseHoursStepperSize: Double = 1
     let noneGradeValue: String = "None"
     let saveButtonText: String
-    let replaceableLetterGrades = [ "C-", "D+", "D", "D-", "F", "FN" ]
+    let replaceableLetterGrades = ["None", "C-", "D+", "D", "D-", "F", "FN" ]
 
     
     init(course: Course?, persistence: TritonCalcPersistence, delegate: ModelRefreshDelegate) {
@@ -44,7 +44,7 @@ extension CourseUpsertModel {
             
             let gpa = persistence.currentGpa
             let newHours = gpa.hours + (course?.creditHours ?? 0) - updated.creditHours
-            let newPointsEarned = gpa.pointsEarned + (course?.points ?? 0.0) - updated.points
+            let newPointsEarned = gpa.pointsEarned + (course?.previousPoints ?? 0) - updated.previousPoints
             let newGpa = GradePointAverage(hours: newHours, pointsEarned: newPointsEarned)
             self.persistence.save(gpa: newGpa)
         }
@@ -53,13 +53,10 @@ extension CourseUpsertModel {
         
         
     }
-    func selectedLetterGradeIndex(isForSubstitution: Bool) -> Int{
-        
-        if isForSubstitution {
-            return self.replaceableLetterGrades.firstIndex(of: self.course?.previousGrade?.rawValue.letter ?? "") ?? 0
-        } else {
-            return self.letterGrades.firstIndex(of: self.course?.grade?.rawValue.letter ?? noneGradeValue)!
-        }
+    func selectedLetterGradeIndex(isForSubstitution: Bool) -> Int {
+        let options = isForSubstitution ? self.replaceableLetterGrades : self.letterGrades
+        let grade = isForSubstitution ? self.course?.previousGrade : self.course?.grade
+        return options.firstIndex(of: grade?.rawValue.letter ?? noneGradeValue)!
     }
    
 }

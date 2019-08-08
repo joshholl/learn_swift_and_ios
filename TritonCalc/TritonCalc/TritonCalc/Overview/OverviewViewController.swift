@@ -36,8 +36,8 @@ extension OverviewViewController {
             guard let target = segue.destination as? CurrentGpaViewController else {
                 return
             }
-            target.prepare(model: model.currentGpa, delegate: self)
-        } 
+            target.prepare(model: CurrentGpaModel(gpa: model.currentGpa,persistence: TritonCalcPersistence(), delegate: self))
+        }
     }
     override func viewWillAppear(_ animated: Bool) {
         mainStackView.isHidden = true
@@ -74,9 +74,3 @@ extension OverviewViewController: ModelRefreshDelegate {
     }
 }
 
-
-extension OverviewViewController: GpaOverviewDelegate {
-    func update(to newAverage: GradePointAverage) {
-        model.update(actualized: newAverage)
-    }
-}

@@ -20,6 +20,15 @@ extension Course {
             return Double(creditHours) * pointValue
         }
     }
+    
+    var previousPoints: Double {
+        get {
+            guard let pointValue = self.previousGrade?.rawValue.pointValue else {
+                return 0
+            }
+            return Double(creditHours) * pointValue
+        }
+    }
 }
 
 extension Course {

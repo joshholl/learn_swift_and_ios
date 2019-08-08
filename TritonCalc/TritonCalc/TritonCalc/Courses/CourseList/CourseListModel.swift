@@ -47,7 +47,7 @@ extension CourseListModel {
         if(course.isSubstitue == true) {
             let gpa = self.persistence.currentGpa
             let newHours = gpa.hours + course.creditHours
-            let newPoints = gpa.pointsEarned + (course.previousGrade?.rawValue.pointValue ?? 0)
+            let newPoints = gpa.pointsEarned + course.previousPoints
             
             self.persistence.save(gpa: GradePointAverage(hours: newHours, pointsEarned: newPoints))
         }
