@@ -127,6 +127,7 @@ extension CourseUpsertViewController: UIPickerViewDelegate {
     private func selectPreviousGrade(row: Int) {
         let letterGradeText = model.replaceableLetterGrades[row]
         previousGradeTextField.text = letterGradeText
+        previousGradeTextField.isEnabled = true
     }
     
     private func selectProjectedGrade(row: Int) {
