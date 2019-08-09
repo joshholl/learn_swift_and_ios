@@ -22,7 +22,7 @@ extension CourseUpsertViewController   {
     override func viewDidLoad() {
         // MARK: Course Name
         courseNameTextField.delegate = self
-        courseNameTextField.text = model.course?.name
+        courseNameTextField.text = model.name
         
         // MARK: Credit Hour Stepper
         creditHourStepper.minimumValue = model.minCourseHoursStepper
@@ -56,7 +56,7 @@ extension CourseUpsertViewController   {
         
         //MARK: Substitute Switch Setup
         isSubstituteSwitch.setOn(model?.isSubstitute ?? false, animated: false)
-        isSubstituteSwitch.isEnabled = model.course?.grade != nil
+        isSubstituteSwitch.isEnabled = model.projectedGrade != nil && model.projectedGrade != "None"
         
         
         self.saveButton.setTitle(model.saveButtonText, for: .normal)

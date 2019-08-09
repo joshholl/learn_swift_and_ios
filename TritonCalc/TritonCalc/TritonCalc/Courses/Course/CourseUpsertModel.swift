@@ -2,7 +2,7 @@ import Foundation
 
 final class CourseUpsertModel {
     private(set) var letterGrades: [String]
-    private(set) var course: Course?
+    private var course: Course?
     
     private var persistence: TritonCalcPersistence
     private weak var delegate: ModelRefreshDelegate?
@@ -55,7 +55,7 @@ extension CourseUpsertModel {
     
     func canSave() -> Bool {
         let areGradesSubstituting = self.isSubstitute ?? false
-        let previousGradeIsValid = (areGradesSubstituting && previousGrade != nil) || (!areGradesSubstituting && previousGrade == "None")
+        let previousGradeIsValid = (areGradesSubstituting && previousGrade != nil) || (!areGradesSubstituting && (previousGrade == "None" || previousGrade == nil))
         
         return isNameValid(self.name) && previousGradeIsValid
     }
