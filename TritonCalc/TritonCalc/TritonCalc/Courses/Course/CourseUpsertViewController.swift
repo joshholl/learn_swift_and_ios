@@ -7,8 +7,10 @@ class CourseUpsertViewController: UIViewController {
     @IBOutlet weak var creditHourStepper: UIStepper!
     @IBOutlet weak var creditHourStepperLabel: UILabel!
     @IBOutlet weak var projectedGradeTextField: UITextField!
+    
     @IBOutlet weak var isSubstituteSwitch: UISwitch!
     @IBOutlet weak var previousGradeTextField: UITextField!
+
     @IBOutlet weak var saveButton: UIButton!
     
     private var projectedGradePicker: UIPickerView!
@@ -36,6 +38,7 @@ extension CourseUpsertViewController   {
         projectedGradePicker.delegate = self
         projectedGradePicker.dataSource = self
         projectedGradeTextField.inputView = projectedGradePicker
+        projectedGradeTextField.delegate = self
 
         let projectedRow = model!.selectedLetterGradeIndex(isForSubstitution: false)
         projectedGradePicker.selectRow(projectedRow, inComponent: 0, animated: true)
@@ -48,15 +51,17 @@ extension CourseUpsertViewController   {
         previousGradePicker.dataSource = self
         previousGradeTextField.inputView = previousGradePicker
         previousGradeTextField.isEnabled =  false
+        previousGradeTextField.delegate = self
+        
 
         let previousGradeRow = model!.selectedLetterGradeIndex(isForSubstitution: true)
         previousGradePicker.selectRow(previousGradeRow, inComponent: 0, animated: true)
         pickerView(previousGradePicker, didSelectRow: previousGradeRow, inComponent: 0)
-//
+
         
         //MARK: Substitute Switch Setup
         isSubstituteSwitch.setOn(model?.isSubstitute ?? false, animated: false)
-        isSubstituteSwitch.isEnabled = model.projectedGrade != nil && model.projectedGrade != "None"
+        isSubstituteSwitch.isEnabled = model.projectedGrade != nil && model.projectedGrade != model.noneGradeValue
         
         
         self.saveButton.setTitle(model.saveButtonText, for: .normal)
@@ -109,10 +114,10 @@ extension CourseUpsertViewController {
             model?.name = value
             sender.textColor = model!.isNameValid(value) ? UIColor.black :  UIColor(named: "UmslRed")
         case projectedGradeTextField:
-            model?.projectedGrade = value
+            model?.projectedGrade = nilIfNone(value: value)
         case previousGradeTextField:
             let value = sender.text
-            model?.previousGrade = value
+            model?.previousGrade = nilIfNone(value: value)
             sender.textColor = model!.isPreviousGradeValid(value) ? UIColor.black :  UIColor(named: "UmslRed")
         default:
             break
@@ -125,18 +130,30 @@ extension CourseUpsertViewController {
 extension CourseUpsertViewController: UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        return true
-    }
-    
-    
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         switch textField {
-        case previousGradeTextField: fallthrough
-        case projectedGradeTextField : return false
-        default: return true
-        }
+        case previousGradeTextField:
+            if(model.replaceableLetterGrades.contains(previousGradeTextField.text ?? "")) {
+                return true
+            } else {
+                let row = model!.selectedLetterGradeIndex(isForSubstitution: true)
+                selectPreviousGrade(row: row)
+                return false
+            }
+        case projectedGradeTextField:
+            if(model.letterGrades.contains(previousGradeTextField.text ?? "")) {
+                return true
+            } else {
+                let row = model!.selectedLetterGradeIndex(isForSubstitution: false)
+                selectProjectedGrade(row: row)
+                return false
+            }
         
+        default:
+            self.view.endEditing(true)
+            return true
+        
+        
+        }
     }
 }
 
@@ -160,15 +177,15 @@ extension CourseUpsertViewController: UIPickerViewDelegate {
     private func selectPreviousGrade(row: Int) {
         let letterGradeText = model.replaceableLetterGrades[row]
         previousGradeTextField.text = letterGradeText
-        model.previousGrade = letterGradeText
+        model.previousGrade = nilIfNone(value: letterGradeText)
         previousGradeTextField.isEnabled = true
     }
     
     private func selectProjectedGrade(row: Int) {
         let letterGradeText = model.letterGrades[row]
         projectedGradeTextField.text = letterGradeText
-        model.projectedGrade = letterGradeText
-        isSubstituteSwitch.isEnabled = letterGradeText != model.noneGradeValue
+        model.projectedGrade = nilIfNone(value: letterGradeText)
+        isSubstituteSwitch.isEnabled = model.projectedGrade != nil
     }
 }
 
@@ -182,5 +199,14 @@ extension CourseUpsertViewController: UIPickerViewDataSource {
         return pickerView == self.previousGradePicker
             ? model.replaceableLetterGrades.count
             : model.letterGrades.count
+    }
+}
+
+extension CourseUpsertViewController {
+    func nilIfNone(value: String?) -> String? {
+        if(value == model.noneGradeValue) {
+            return nil
+        }
+        return value
     }
 }
